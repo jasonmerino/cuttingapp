@@ -1,0 +1,28 @@
+.menu-inline {
+	@extend %clearfix;
+	> li {
+		float: left;
+	}
+}
+
+.grid-nested {
+	margin-bottom: 0;
+} 
+
+li {
+	position: relative;
+
+	& > .sub-menu {
+		display: none;
+		position: absolute;
+		z-index: 1001;
+	}
+}
+li.open > .sub-menu {
+	display: block;
+}
+
+.float-right {
+	@extend %clearfix;
+	float: right;
+}

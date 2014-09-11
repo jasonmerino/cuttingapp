@@ -1,0 +1,21 @@
+input[type="submit"], button {
+	background: none;
+	border: none;
+	height: $pad*2.5;
+	line-height: $pad*2.5;
+	padding: 0 $pad;
+	border-radius: $pad/2;
+	background: darken($color-offwhite, 5%);
+	color: #6e6e6e;
+	border-bottom: solid thin darken($color-offwhite, 10%);
+	text-shadow: 0 1px #fff;
+
+	@include transition(background-color, .25s);
+
+	&:hover {
+		background-color: darken($color-offwhite, 10%);
+	}
+	&:focus {
+		outline: none;
+	}
+}

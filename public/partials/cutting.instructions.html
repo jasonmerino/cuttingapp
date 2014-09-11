@@ -1,0 +1,25 @@
+<!-- Cutting Instructions Form -->
+
+<h2 page-name></h2>
+<div class="block">
+<form role="form" class="form-inline">
+	<h4>Select Existing Customer</h4>	
+	<select ng-model="select_customer" ng-options="option.first_name + ' ' + option.last_name for option in customers | orderBy: 'last_name'"></select>
+</form>
+<h4>Select Animal</h4>
+	<nav>
+		<ul class="grid" ng-init="select='Select Animal';">
+			<li class="dropdown selectbox col-1-4" ng-class="{ 'open' : animal_dropdown }" ng-init="animal_dropdown=false;" ng-click="toggleClass('animal_dropdown');">Select Animal
+				<ul class="sub-menu">
+					<li ng-repeat="animal in animals | orderBy: 'name' "><a ui-sref="{{ animal.slug }}" >{{ animal.name }}</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+<span>{{ select_customer.first_name +  ' ' + select_customer.last_name }} </span>
+
+<div ui-view class="block"></div>
+
+<!-- ng-click="changeSelect(animal.name, animal.slug)" -->

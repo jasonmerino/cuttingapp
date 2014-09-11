@@ -1,0 +1,64 @@
+<!-- Hog Form -->
+
+<h3 page-name></h3>
+
+<form>
+	<div class="grid">
+		<div class="col-1-2">
+			<div class="form-group">
+				<label>Individual Birds Processed</label>
+				<input class="form-control" type="text" ng-init="birds_processed = 0" ng-model="birds_processed" ng-pattern="/^\d+$/" >
+				<label>Total Cost</label>
+				<input class="form-control" type="text" value="{{ birds_processed * 3 | currency }}" disabled>
+			</div>
+			<div class="form-group">
+				<h4>Smoked Links</h4>
+				<label>Finished Weight</label><input ng-init="pounds_smoked = 0" class="form-control" type="text" ng-model="pounds_smoked">
+				<label>Total Cost</label><input class="form-control" type="text" value="{{ pounds_smoked * 5.59 | currency }}"  disabled>
+			</div>
+			<div class="form-group">
+				<h4>Bulk</h4>
+				<label>Finished Weight</label><input ng-init="pounds_bulk = 0" class="form-control" type="text" ng-model="pounds_bulk">
+				<label>Total Cost</label><input class="form-control" type="text" value="{{ pounds_bulk * 4.29 | currency }}" disabled>
+			</div>
+			<div class="form-group">
+				<h4>Total</h4>
+				<input class="form-control"  type="text" value="{{ (birds_processed * 3) + (pounds_smoked * 5.59) + (pounds_bulk * 4.29)  | currency }}" disabled>
+			</div>
+			<div class="form-group">
+					<h4>Notes</h4>
+					<textarea class="form-control" ng-model="notes" rows="5"></textarea>
+				</div>
+		</div>
+		<div class="col-1-2">
+			<h3>Products</h3>
+				<div ng-include="'partials/products/products.fresh_sausage.html'"></div>
+				<div ng-include="'partials/products/products.smoked_sausage.html'"></div>
+				<div ng-include="'partials/products/products.stix.html'"></div>
+		</div>
+	</div>
+</form>
+
+<!-- <div>
+  <script type="text/ng-template" id="myModalContent.html">
+      <div class="modal-header">
+          <h3 class="modal-title">Im a modal!</h3>
+      </div>
+      <div class="modal-body">
+          <ul>
+              <li ng-repeat="item in items">
+                  <a ng-click="selected.item = item">{{ item }}</a>
+              </li>
+          </ul>
+          Selected: <b>{{ selected.item }}</b>
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="ok()">OK</button>
+          <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+      </div>
+  </script>
+  <button class="btn btn-default" ng-click="open()">Open me!</button>
+	<button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+	<button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+	<div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div> -->

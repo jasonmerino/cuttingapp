@@ -1,0 +1,35 @@
+{
+  "name": "Cutting Instructions App",
+  "version": "0.0.0",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "Cutting Instructions App for Wagon Wheel",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "dont_over_think_it": "https://github.com/adrianjonmiller/dont_over_think_it.git#~0.0.1",
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap": "~3.2.0",
+    "ionicons": "~1.5.2",
+    "angular-ui-router": "~0.2.11",
+    "angular-ui-router.stateHelper": "~1.1.0",
+    "angular-ui-select2": "~0.0.5",
+    "angular-us-states": "~0.1.1"
+  }
+}

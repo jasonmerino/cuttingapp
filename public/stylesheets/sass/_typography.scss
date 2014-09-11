@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,500);
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: $pad;
+	line-height: 1em;
+	font-weight: normal;
+}
+
+h2 {
+	margin-top: $pad*2;
+}
+
+.heading-hero {
+	margin: 0;
+	text-align: center;
+	font-size: 36px;
+	height: 400px;
+	line-height: 400px;
+	color: #fff;
+	font-weight: normal;
+	margin: 0;
+}
+
+.heading-grande {
+}

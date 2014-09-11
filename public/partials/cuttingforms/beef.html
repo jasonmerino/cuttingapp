@@ -1,0 +1,171 @@
+<!-- Hog Form -->
+
+<h3 page-name></h3>
+<form>
+	<div class="grid">
+		<div class="col-1-2">
+			<div class="form-group">
+				<label>Portion</label>
+				<label class="radio-inline"><input type="radio" ng-model="beef_portion" value="1"> Whole</label>
+				<label class="radio-inline"><input type="radio" ng-model="beef_portion" value="1/2"> Half</label>
+				<label class="radio-inline"><input type="radio" ng-model="beef_portion" value="1/3"> Third</label>
+				<label class="radio-inline"><input type="radio" ng-model="beef_portion" value="1/4"> Quarter</label>
+			</div>
+			<div class="form-group">
+				<h4>Steaks</h4>
+				<label>Number of Steaks</label>
+				<select class="form-control" ng-model="bacons_thickness">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<label>Thickness</label>
+				<select class="form-control" ng-model="bacon_thickness">
+					<option value="1/4">1/4 in</option>
+					<option value="1/2">1/2 in</option>
+					<option value="3/4">3/4 in</option>
+					<option value="1">1 in</option>
+					<option value="1 1/4">1 1/4 in</option>
+					<option value="1 1/2">1 1/2 in</option>
+					<option value="1 3/4">1 3/4 in</option>
+					<option value="2">2 in</option>
+				</select>
+				<label><input type="checkbox" ng-model="steaks_bone_in"> Bone In</label>
+			</div>
+			<div class="form-group">
+				<h4>Roasts</h4>
+				<label class="radio-inline"><input type="radio" ng-model="roast_size" value="3"> 3 lb</label>
+				<label class="radio-inline"><input type="radio" ng-model="roast_size" value="4"> 4 lb</label>
+				<label class="radio-inline"><input type="radio" ng-model="roast_size" value="5"> 5 lb</label>
+				<label class="radio-inline"><input type="radio" ng-model="roast_size" value="{{ roast_size_custom }}"> <input class="form-control" type="text" ng-model="roast_size_custom"></label>
+			</div>
+			<div class="form-group">
+				<h4>Cross Rib</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="cross_rib_steaks" value="cross_rib_steaks"> Steaks</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="cross_rib_roasts" value="cross_rib_roasts"> Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="cross_rib_grind" value="cross_rib_grind"> Grind</label>
+			</div>
+			<div class="form-group">
+				<h4>Chuck</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="chuck_steaks" value="all_steaks"> All Steaks</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="chuck_roasts" value="all_roasts"> All Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="chuck_half_half" value="half_steaks_roast"> Half Steaks/Half Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="chuck_best_roasts" value="best_roasts"> Best Roasts Only</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="chuck_grind" value="grind"> Grind</label>
+			</div>
+			<div class="form-group">
+				<h4>Rib</h4>
+				<label class="radio-inline"><input type="radio" ng-model="rib" value="all_steaks"> All Steaks</label>
+				<label class="radio-inline"><input type="radio" ng-model="rib" value="all_roasts"> Roasts</label>
+				<label class="radio-inline"><input type="radio" ng-model="rib" value="{{ rib_custom }}"> <input type="text" ng-model="rib_custom"></label>
+			</div>
+			<div class="form-group">
+				<h4>Short Ribs</h4>
+				<label class="radio-inline"><input type="radio" ng-model="short_ribs" value="1"> Yes</label>
+				<label class="radio-inline"><input type="radio" ng-model="short_ribs" value="0"> No</label>
+			</div>
+			<div class="form-group">
+				<h4>Soup Bones</h4>
+				<label class="radio-inline"><input type="radio" ng-model="soup_bones" value="1"> Yes</label>
+				<label class="radio-inline"><input type="radio" ng-model="soup_bones" value="0"> No</label>
+			</div>
+			<div class="form-group">
+				<h4>Rump Roasts</h4>
+				<label class="radio-inline"><input type="radio" ng-model="rump_roast" value="1"> Yes</label>
+				<label class="radio-inline"><input type="radio" ng-model="rump_roast" value="0"> No</label>
+			</div>
+			<div class="form-group">
+				<h4>Stew Meat</h4>
+				<label class="radio-inline"><input type="radio" ng-model="rump_roasts" value="1"> Yes</label>
+				<label class="radio-inline"><input type="radio" ng-model="rump_roasts" value="0"> No</label>
+				<label>Amount Per Package</label>
+				<select class="form-control" ng-model="stew_meat_amount_per_package">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<label>Number of Packages</label>
+				<select class="form-control" ng-model="stew_meat_packages_number">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<h4>Brisket</h4>
+				<label class="radio-inline"><input type="radio" ng-model="soup_bones" value="flat_cut"> Flat Cut</label>
+				<label class="radio-inline"><input type="radio" ng-model="soup_bones" value="{{ brisket_cowed }}"> Cowed 
+					<input type="text" xng-model="brisket_cowed">
+				</label>
+				<label class="radio-inline"><input type="radio" ng-model="soup_bones" value="grind"> Grind</label>
+			</div>
+			<div class="form-group">
+				<h4>Flank Steaks</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="flank_steaks_regular" value="regular"> Regular</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="flank_steaks_tenderized" value="tenderized"> Tenderized</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="flank_steaks_grind" value="grind"> Grind</label>
+			</div>
+			<div class="form-group">
+				<h4>Sirloin Tip</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="sirloin_tip_steaks" value="steaks"> Steaks</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="sirloin_tip_roasts" value="tenderized"> Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="sirloin_tip_carene_asada" value="tenderized"> Carne Asada</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="sirloin_tip_grind" value="tenderized"> Grind</label>
+			</div>
+			<div class="form-group">
+				<h4>Top Round</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="top_round"> Top Round</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="top_round_steaks" value="{{ top_round_steaks_type }}"> Steaks</label>
+				<label class="radio-inline"><input type="radio" ng-model="top_round_steaks_type" value="regular"> Regular</label> 
+				<label class="radio-inline"><input type="radio" ng-model="top_round_steaks_type" value="tender"> Tender</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="top_round_roasts"> Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="top_round_london_broil"> London Broil</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="top_round_grind"> Grind</label>	
+			</div>
+			<div class="form-group">
+				<h4>Bottom Round</h4>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="bottom_round"> Top Round</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="bottom_round_steaks" value="{{ top_round_steaks_type }}"> Steaks</label>
+				<label class="radio-inline"><input type="radio" ng-model="bottom_round_steaks_type" value="regular"> Regular</label> 
+				<label class="radio-inline"><input type="radio" ng-model="bottom_round_steaks_type" value="tender"> Tender</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="bottom_round_roasts"> Roasts</label>
+				<label class="checkbox-inline"><input type="checkbox" ng-model="bottom_round_custom" value="{{ bottom_round_custom_input}}">
+					<input ng-model="bottom_round_custom_input">
+				</label>
+			</div>
+			<div class="form-group">
+				<h4>Ground Meat</h4>
+				<label class="radio-inline"><input type="radio" ng-model="ground_meat" value="regular"> Regular</label>
+				<label class="radio-inline"><input type="radio" ng-model="ground_meat" value="lean"> Lean</label>
+				<label class="radio-inline"><input type="radio" ng-model="ground_meat" value="xlean"> Extra lean</label>
+			</div>
+	</div>
+		<div class="col-1-2"> 
+			<div class="form-group">
+				<h4>Notes</h4>
+				<textarea class="form-control" ng-model="notes" rows="5"></textarea>
+			</div>
+		</div>
+	</div>
+</form>

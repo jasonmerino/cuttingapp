@@ -1,0 +1,115 @@
+<!-- Wildgame Form -->
+
+<h3 page-name></h3>
+
+<div class="form-inline form-group" ng-controller="costCtrl">
+	<input class="form-control" ng-model="weight" type="text" ng-init="cost = 130" ng-change="change(forms.minPrice, forms.pricePerPound )"></input>
+	<input class="form-control" type="text" value="{{ cost | currency }}"></input>
+</div>
+
+<div ng-repeat="section in forms.sections" class="form-group" >
+	<h4>{{ section.name }}</h4>
+	<div class="form-inline" ng-repeat="form in section.forms">
+		<form-template form-vars="form"></form-template>
+	</div>
+</div>
+
+<span>Total Cost: </span><span ng-bind="total | currency"></span>
+
+<!-- <div class="form-group">
+				<h4>Backstraps</h4>
+				<label class="radio-inline"><input ng-model="backstraps" type="checkbox" value="choops"> Chops</label>
+				<label class="radio-inline"><input ng-model="backstraps" type="checkbox" value="roasts"> Roasts</label>
+				<label class="radio-inline"><input ng-model="backstraps" type="checkbox" value="grind"> Grind</label>
+				<label class="radio-inline"><input ng-model="backstraps" type="checkbox" value="jerky"> Jerky</label>
+			</div> -->
+
+
+
+<!-- <form>
+	<div class="grid">
+		<div class="col-1-2">
+			<div class="form-group">
+				<select ng-model="animal_size">
+					<option value="1.30">Whole</option>
+					<option value="1.45">Parts</option>
+					<option value="1.45">Special</option>
+				</select>
+				<input type="text" ng-model="hanging_weight">
+				<input type="text" value="{{ hanging_weight * animal_size | currency }}">
+			</div>
+
+
+
+			
+			<div class="form-group">
+				<h4>Tenderloins</h4>
+				<label class="radio-inline"><input ng-model="tenderloins" type="radio" value="yes"> Yes</label>
+				<label class="radio-inline"><input ng-model="tenderloins" type="radio" value="no"> No</label>
+				<label class="radio-inline"><input ng-model="tenderloins" type="radio" value="missing"> Missing</label>
+				<label class="radio-inline"><input ng-model="tenderloins" type="radio" value="notsaveable"> Could Not Save</label>
+			</div>
+			<div class="form-group">
+				<h4>Steaks</h4>
+				<label class="radio-inline"><input ng-model="steaks_tenderized" type="checkbox" value="tenderized"> Tenderized</label>
+				<label class="checkbox-inline"><input ng-model="steaks_regular" type="checkbox" value="regular"> Regular</label>
+				<label class="checkbox-inline"><input ng-model="steaks_roasts" type="checkbox" value="roasts"> Roasts</label>
+				<label class="checkbox-inline"><input ng-model="steaks_grind" type="checkbox" value="grind"> Grind</label>
+				<span><label class="checkbox-inline"><input ng-model="jerky" type="checkbox" value="{{ apple_jerky + ' ' + peppered_jerky }}"> Jerky </label>
+					<div ng-show="jerky">
+						<label>Apple</label>
+						<select ng-model="apple_jerky">
+							<option value="jerky_apple_5">5 lb</option>
+							<option value="jerky_apple_10">10 lb</option>
+							<option value="jerky_apple_all">All</option>
+						</select>
+						<label>Peppered</label>
+						<select ng-model="peppered_jerky">
+							<option value="peppered_apple_5">5 lb</option>
+							<option value="peppered_apple_5">10 lb</option>
+							<option value="peppered_apple_5">All</option>
+						</select>
+					</div>
+				</span>
+			</div>
+			<div class="form-group">
+				<h4>Stew</h4>
+				<div class="grid">
+					<div class="col-1-2">
+						<label>Package Size</label>
+						<select class="form-control" ng-model="stew">
+							<option value="1">1 lb</option>
+							<option value="1.5">1.5 lb</option>
+							<option value="2">2 lb</option>
+						</select>
+					</div>
+					<div class="col-1-2">
+						<label>Number of Packages</label>
+						<select class="form-control" ng-model="package_size">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<h4>Trim</h4>
+				<label class="radio-inline"><input ng-model="trim" type="radio" value="beef_fat"> Add Beef Fat</label>
+				<label class="radio-inline"><input ng-model="trim" type="radio" value="pork_fat"> Add Pork Fat</label>
+				<label class="radio-inline"><input ng-model="trim" type="radio" value="no_fat"> No Fat</label>
+				<label class="radio-inline"><input ng-model="trim" type="radio" value="dont_grind"> Don't Grind</label>
+			</div>
+		</div>
+		<div class="col-1-2">
+			<div class="form-group">
+				<h4>Notes</h4>
+				<textarea class="form-control" ng-model="notes" rows="5"></textarea>
+			</div>
+		</div>
+	</div>
+</form> -->

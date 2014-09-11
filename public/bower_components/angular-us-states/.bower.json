@@ -1,0 +1,43 @@
+{
+  "name": "angular-us-states",
+  "version": "0.1.1",
+  "authors": [
+    "Tanner JT <https://github.com/tannerjt>",
+    "Brent Vatne <brentvatne@gmail.com>"
+  ],
+  "description": "Provide a collection of US States",
+  "main": "./build/angular-us-states.js",
+  "keywords": [
+    "US",
+    "States",
+    "America",
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/brentvatne/angular-us-states",
+  "ignore": [
+    "src",
+    "node_modules",
+    "bower_components",
+    "test",
+    "karma.conf.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "angular": ">= 1.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": ">= 1.0.0"
+  },
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "13f351ce38b5cec8dee3e8c734471f8eb876b0a1"
+  },
+  "_source": "git://github.com/brentvatne/angular-us-states.git",
+  "_target": "~0.1.1",
+  "_originalSource": "angular-us-states",
+  "_direct": true
+}

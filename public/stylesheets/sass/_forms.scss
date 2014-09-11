@@ -1,0 +1,74 @@
+input[type="text"], input[type="email"], input[type="search"] {
+	height: $pad * 2;
+	line-height: $pad;
+	padding: 3px $pad/2;
+	width: 100%;
+	border: none;
+	border: solid thin $color-offwhite;
+	border-radius: $pad/4;
+	&.inline {
+		width: 25%;
+		float: left;
+	}
+}
+
+.input-group {
+	margin-bottom: $pad;
+
+	> * {
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}
+
+.addon-after {
+	left: -$pad;
+}
+
+input, select, textarea {
+	width: 100%;
+	
+	&.ng-dirty {
+		border: solid thin $color-lightgray;
+	}
+	&.ng-invalid {
+		border: solid thin orange;
+		&:before {
+			content: "x";
+		}
+	}
+	&.ng-valid {
+		border: solid thin $color-lightgray;
+	}
+	&.ng-pristine {
+		border: solid thin $color-lightgray;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+label {
+	margin: .5em 0 0;
+	font-size: 1em;
+	line-height: 1.5em;
+	display: block;
+	height: 1.5em;
+}
+
+select {
+	border: none;
+	background: none;
+	font-size: 10pt;
+	height: $pad*2;
+	line-height: $pad*2;
+	padding-right: $pad;
+
+	@include background-image(linear-gradient(#fff 50%, $color-offwhite));
+}

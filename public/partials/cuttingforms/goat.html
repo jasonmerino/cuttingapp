@@ -1,0 +1,96 @@
+<!-- Goat Form -->
+
+<h3 page-name></h3>
+<form role="form">
+	<!-- Chops -->
+	<div class="form-group">
+		<h3>Loin Chops</h3>
+		<label>Thickness</label>
+		<select ng-model="loin_chops_thickness">
+			<option value="1/4">1/4</option>
+			<option value="1/2">1/2</option>
+			<option value="3/4">3/4</option>
+			<option value="1">1</option>
+		</select>
+		<label>Number</label>
+		<select ng-model="loin_chops_number">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+	</div>
+	<!--- Ribs -->
+	<div class="form-group">
+		<h3>Rib Chops</h3>
+		<label><input ng-model="rib_chops" type="radio" value="chops"> Chops</label>
+		<label><input ng-model="rib_chops" type="radio" value="racks"> Racks</label>
+	</div>
+	<div class="form-group">
+		<h3>Steaks</h3>
+		<label>Thickness</label>
+		<select ng-model="steaks_thickness">
+			<option value="1/4">1/4</option>
+			<option value="1/2">1/2</option>
+			<option value="3/4">3/4</option>
+			<option value="1">1</option>
+		</select>
+		<label>Number</label>
+		<select ng-model="steaks_number">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<h3>Legs</h3>
+		<label><input ng-model="legs" type="radio" value="whole"> Whole</label>
+		<label><input ng-model="legs" type="radio" value="half"> Cut in half</label>
+		<label><input ng-model="legs" type="radio" value="steaks"> Cut into steaks</label>
+		<label><input ng-model="legs" type="radio" value="boneless"> Boneless</label>
+		<label><input ng-model="legs" type="radio" value="bonein"> Bone in</label>
+	</div>
+	<div class="form-group">
+		<h3>Ribs</h3>
+		<label><input ng-model="ribs" type="radio" value="yes"> Yes</label>
+		<label><input ng-model="ribs" type="radio" value="no"> No</label>
+	</div>
+	<div class="form-group">
+		<h3>Ribblets</h3>
+		<label><input ng-model="riblets" type="radio" value="yes"> Yes</label>
+		<label><input ng-model="riblets" type="radio" value="no"> No</label>
+	</div>
+	<div class="form-group">
+		<h3>Shanks</h3>
+		<label><input ng-model="shanks" type="radio" value="yes"> Yes</label>
+		<label><input ng-model="shanks" type="radio" value="no"> No</label>
+	</div>
+	<div class="form-group">
+		<h3>Stew</h3>
+		<label><input ng-model="stew" type="radio" value="yes"> Yes</label>
+		<label><input ng-model="stew" type="radio" value="no"> No</label>
+	</div>
+	<div class="form-group">
+		<h3>Grind</h3>
+		<label><input ng-model="grind" type="radio" value="yes"> Yes</label>
+		<label><input ng-model="grind" type="radio" value="no"> No</label>
+	</div>
+	<div class="form-group">
+		<h3>Notes</h3>
+		<textarea ng-model="notes" rows="3"></textarea>
+	</div>
+</form>
+

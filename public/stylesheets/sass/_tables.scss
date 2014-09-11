@@ -1,0 +1,27 @@
+table {
+	width: 100%;
+	thead > tr {
+		background-color: $color-offwhite;
+		border-bottom: none;
+		> th {
+			text-align: left;
+			border-right: solid thin white;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 $pad;
+			font-size: 10pt;
+		}
+	}
+	tbody > tr {
+		border-bottom: solid thin $color-offwhite;
+		&:hover {
+			background-color: lighten($color-offwhite, 3%);
+		}
+		td {
+			padding: $pad/2;
+		}
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+}

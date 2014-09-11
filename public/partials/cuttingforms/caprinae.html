@@ -1,0 +1,128 @@
+<!-- Lamb Form -->
+
+<h3 page-name></h3>
+<div class="grid">
+	<div class="col-1-2">
+<form role="form">
+		<!-- Chops -->
+		<div class="form-group">
+			<h4>Loin Chops</h4>
+			<div class="grid">
+				<div class="col-1-2">
+					<label class="control-label">Thickness</label>
+					<select class="form-control" ng-model="loin_chops_thickness">
+						<option value="1/4">1/4</option>
+						<option value="1/2">1/2</option>
+						<option value="3/4">3/4</option>
+						<option value="1 1/4">1 1/4</option>
+						<option value="1 1/2">1 1/2</option>
+						<option value="1 3/4">1 3/4</option>
+						<option value="2">2</option>
+					</select>
+				</div>
+				<div class="col-1-2">
+					<label>Number</label>
+					<select class="form-control" ng-model="loin_chops_number">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<!--- Ribs -->
+		<div class="form-group">
+			<h4>Rib Chops</h4>
+			<label class="radio-inline"><input ng-model="rib_chops_chops" type="checkbox" value="chops"> Chops</label>
+			<label class="radio-inline"><input ng-model="rib_chops_racks" type="checkbox" value="racks"> Racks</label>
+		</div>
+		<!--- Steaks -->
+		<div class="form-group">
+			<h4>Steaks</h4>
+			<div class="grid">
+				<div class="col-1-2">
+					<label>Thickness</label>
+					<select class="form-control" ng-model="steaks_thickness">
+						<option value="1/4">1/4</option>
+						<option value="1/2">1/2</option>
+						<option value="3/4">3/4</option>
+						<option value="1">1</option>
+					</select>
+				</div>
+				<div class="col-1-2">
+					<label>Number</label>
+					<select class="form-control" ng-model="steaks_number">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	<div class="grid">
+		<!-- Legs -->
+		<div class="form-group col-1-3">
+			<h4>Legs</h4>
+			<label><input ng-model="legs_whole" type="checkbox" value="whole"> Whole</label>
+			<label><input ng-model="legs_half" type="checkbox" value="half"> Cut in half</label>
+			<label><input ng-model="legs_steaks" type="checkbox" value="steaks"> Cut into steaks</label>
+			<label><input ng-model="legs_boneless" type="checkbox" value="boneless"> Boneless</label>
+			<label><input ng-model="legs_bonein" type="checkbox" value="bonein"> Bone in</label>
+		</div>
+		<!-- Ribs -->
+		<div class="form-group col-1-3">
+			<h4>Ribs</h4>
+			<label class="radio-inline"><input ng-model="ribs" type="radio" value="yes"> Yes</label>
+			<label class="radio-inline"><input ng-model="ribs" type="radio" value="no"> No</label>
+		</div>
+		<!-- Riblets -->
+		<div class="form-group col-1-3">
+			<h4>Riblets</h4>
+			<label class="radio-inline"><input ng-model="riblets" type="radio" value="yes"> Yes</label>
+			<label class="radio-inline"><input ng-model="riblets" type="radio" value="no"> No</label>
+		</div>
+	</div>
+	<div class="grid">
+		<!-- Shanks -->
+		<div class="form-group col-1-3">
+			<h4>Shanks</h4>
+			<label class="radio-inline"><input ng-model="shanks" type="radio" value="yes"> Yes</label>
+			<label class="radio-inline"><input ng-model="shanks" type="radio" value="no"> No</label>
+		</div>
+		<!-- Stew -->
+		<div class="form-group col-1-3">
+			<h4>Stew</h4>
+			<label class="radio-inline"><input ng-model="stew" type="radio" value="yes"> Yes</label>
+			<label class="radio-inline"><input ng-model="stew" type="radio" value="no"> No</label>
+		</div>
+		<!-- Grind -->
+		<div class="form-group col-1-3">
+			<h4>Grind</h4>
+			<label class="radio-inline"><input ng-model="grind" type="radio" value="yes"> Yes</label>
+			<label class="radio-inline"><input ng-model="grind" type="radio" value="no"> No</label>
+		</div>
+	</div>
+</form>
+</div>
+	<div class="col-1-2">
+		<div class="form-group col-1">
+			<h4>Notes</h4>
+			<textarea class="form-control" ng-model="notes" rows="5"></textarea>
+		</div>
+	</div>
+</div>
+

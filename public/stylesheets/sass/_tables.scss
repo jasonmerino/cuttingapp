@@ -15,7 +15,7 @@ table {
 	tbody > tr {
 		border-bottom: solid thin $color-offwhite;
 		&:hover {
-			background-color: lighten($color-offwhite, 3%);
+			background-color: lighten($color-offwhite, 12%);
 		}
 		td {
 			padding: $pad/2;

@@ -1,0 +1,33 @@
+<h2 page-name></h2>
+	<ul class="unstyled">
+		<div class="col-1-2">
+			<div class="module block">
+				<form>
+					<button class="float-right" ng-click="launchModal()">Edit</button>
+				</form>
+				<strong class="width-8 align-right">Name</strong>
+				<span>{{ customer.first_name + ' ' + customer.last_name }}</span>
+				<br>
+				<strong class="width-8 align-right">Cell Phone</strong>
+				<span>{{ customer.cell_phone }}</span>
+				<br>
+				<strong class="width-8 align-right">Home Phone</strong>
+				<span>{{ customer.home_phone }}</span>
+				<br>					
+				<strong class="width-8 align-right">Street</strong>
+				<span>{{ customer.street }}</span>
+				<br>
+				<strong class="width-8 align-right">Street</strong>
+				<span>{{ customer.street_cont }}</span>
+				<br>
+				<strong class="width-8 align-right">City</strong>
+				<span>{{ customer.city }}</span>
+				<br>
+				<strong class="width-8 align-right">State</strong>
+				<span>{{ customer.state }}</span>
+				<br>
+				<strong class="width-8 align-right">Zip</strong>
+				<span>{{ customer.zip }}</span>
+			</div>
+		</div>
+	</ul>

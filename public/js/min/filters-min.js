@@ -1,1 +1,0 @@
-"use strict";angular.module("myApp.filters",[]).filter("interpolate",["version",function(r){return function(t){return String(t).replace(/\%VERSION\%/gm,r)}}]).filter("capitalize",function(){return function(r,t){return null!=r?(r=r.toLowerCase(),r.substring(0,1).toUpperCase()+r.substring(1)):void 0}});

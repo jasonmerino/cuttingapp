@@ -1,0 +1,89 @@
+<div id="modal" ng-controller="newInstructionsCtrl">
+	<div class="container block modal">
+		<header class="header">
+			<h3>New Cutting Instructions</h3>
+			<i class="float-right ion-close-round button" ng-click="remove()"></i>
+		</header>
+		<form name="cuttingInstructions">
+			<div class="grid">
+				<div class="col-1-2">
+					<label>Select Animal</label>
+					<nav>
+						<ul class="grid" ng-init="select='Select Animal';">
+
+							<li class="dropdown selectbox"
+								ng-class="{'open': isActive}"
+								ng-init="isActive=false;"
+								ng-click="isActive = !isActive">
+
+								<span class="selectbox-name" ng-init="animal_type = 'Select Animal'" ng-bind="animal_type" ></span>
+								<ul class="sub-menu">
+									<li ng-repeat="animal in animals | orderBy: 'name' ">
+										<a ng-click="animalType(animal.name)" >{{ animal.name }}</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-1-2">
+					<label>For</label>	
+					<select ng-model="customer_id" ng-options="option._id as option.first_name for option in customers | orderBy: 'last_name'">
+						<option value="">-- Select Customer --</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="inline-1-4">
+					<label>Weight</label>
+					<input type="text" ng-model="formValues.weight">	
+				</div>
+				<div class="inline-1-4">
+					<label>Price Per Pound</label>
+					<input type="text" value="{{ formValues.pricePerPound }} " disabled>
+				</div>
+			</div>
+			<span ng-bind="totalCost()"></span>
+			<div class="inline-form" ng-repeat="form in forms" class="section">
+				<h4 class="form-label">{{ form.name }}</h4>
+				<form-template form-vars="form"></form-template>
+			</div>
+			<!-- <div ng-include="form.templateUrl"></div> -->
+			<button ng-click="submit()">Submit</button>
+		</form>
+	</div>	
+</div>
+
+
+<!-- ng-click="changeSelect(animal.name, animal.slug)" -->
+
+
+<!-- <div class="col-2-3">
+		<div class="block" >
+			<form name="cutting" ng-submit="submit()">
+				<label>Enter Weight</label>
+				<div class="form-group">
+					<div class="inline-1-2">
+						<input class="form-control" ng-model="weight" type="text" ng-change="change(forms.minPrice, forms.pricePerPound )"></input>
+					</div>
+				</div>
+				<div ng-repeat="section in forms.sections" class="section">
+					<h4>{{ section.name }}</h4>
+					<div ng-repeat="form in section.forms" class="form-group-inline">
+						<form-template form-vars="form"></form-template>
+					</div>
+				</div>
+				<input type="submit" value="submit">
+			</form>
+			<span ng-bind="selection"></span>
+		</div>
+	</div>
+	<div class="col-1-3 block">
+		<span>Total Cost: </span><span ng-bind="total | currency"></span>
+		<div ng-repeat="section in forms.sections" class="section">
+			<h4>{{ section.name }}</h4>
+			<div ng-repeat="form in section.forms" class="form-group-inline">
+				<output-template form-vars="form"></output-template>
+			</div>
+		</div>
+	</div>

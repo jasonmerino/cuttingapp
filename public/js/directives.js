@@ -10,13 +10,18 @@ angular.module('myApp.directives', [])
       }
     }
   }])
+
   .directive('formTemplate', ['$http', '$templateCache', '$compile', function($http, $templateCache, $compile) {
 
     var linker = function (scope, element, attrs) {
-      var tplUrl = [scope.formVars.templateName];
-      $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
-         element.replaceWith($compile(tplContent.trim())(scope));
-      });
+      if(!scope.formVars.templateUrl == '') {
+        if(scope.formVars) {
+          var tplUrl = scope.formVars.templateUrl;
+          $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
+             element.replaceWith($compile(tplContent.trim())(scope));
+          });
+        }
+      }
     }
 
     return {
@@ -27,9 +32,46 @@ angular.module('myApp.directives', [])
       },
       link: linker
     };
-  }]).directive('mainMenu', function(){
+  }])
+
+  .directive('mainMenu', function(){
     return {
-      templateUrl: 'partials/header.html'
+      templateUrl: 'partials/shared.header.html'
+    }
+  })
+
+  .directive('outputTemplate', function($http, $templateCache, $compile){
+    var linker = function (scope, element, attrs) {
+      if(!scope.formVars.templateUrl == "") {
+        var tplUrl = [scope.formVars.templateUrl];
+        console.log(scope.formVars.templateUrl);
+        $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
+           element.replaceWith($compile(tplContent.trim())(scope));
+        });
+      }
+    }
+
+    return {
+      restrict: 'E',
+      scope: {
+        formVars: "="
+      },
+      link: linker
+    }
+  })
+
+  .directive('uiModal', function($http, $templateCache, $compile){
+    var linker = function (scope, element, attrs) {
+      $http.get(attrs.modalTemplate, {cache: $templateCache}).success(function(tplContent){
+         element.replaceWith($compile(tplContent.trim())(scope));
+      });
+    }
+
+    return {
+      scope: {
+        modalTemplate: "="
+      },
+      link: linker
     }
   })
 

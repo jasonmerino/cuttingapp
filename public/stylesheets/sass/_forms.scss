@@ -1,74 +1,146 @@
-input[type="text"], input[type="email"], input[type="search"] {
-	height: $pad * 2;
-	line-height: $pad;
-	padding: 3px $pad/2;
-	width: 100%;
-	border: none;
-	border: solid thin $color-offwhite;
-	border-radius: $pad/4;
-	&.inline {
-		width: 25%;
-		float: left;
-	}
-}
+// .section {
+// 	margin: $pad*2 0;
+// }
 
-.input-group {
-	margin-bottom: $pad;
+// input[type="text"], input[type="email"], input[type="search"] {
+// 	height: $pad * 2;
+// 	line-height: $pad;
+// 	padding: 3px $pad/2;
+// 	width: 100%;
+// 	border: none;
+// 	border: solid thin $color-offwhite;
+// 	border-radius: $pad/4;
+// 	margin: 0;
 
-	> * {
-		&:first-child {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-		&:last-child {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-	}
-}
+// 	&:focus {
+// 		outline: none;
+// 	}
+// }
 
-.addon-after {
-	left: -$pad;
-}
+// input:disabled {
+// 	background: #f3f3f3;
+// 	color: #555;
+// }
 
-input, select, textarea {
-	width: 100%;
+// [class*="form-group"] {
+// 	@extend %clearfix;
+// 	margin-bottom: $pad;
+// 	margin-right: -$pad;
+
+// 	&[class*="-pad"] {
+// 		padding: $pad;
+// 	}
+
+// 	&[class*="-inline"] {
+// 		> * {
+// 			float: left;
+// 			padding-left: $pad;
+// 			&:first-of-type {
+// 				padding-left: 0;
+// 			}
+// 		}
+// 	}
+// 	[class*="inline-"] {
+// 		float: left;
+// 		margin-top: 0;
+		
+
+// 		&[class*="-1"] {
+// 			width: 100%;
+// 			padding-right: $pad;
+// 		}
+// 		&[class*="-1-2"] {
+// 			width: 50%;
+// 			padding-right: $pad;
+// 		}
+// 		&[class*="-1-4"] {
+// 			width: 25%;
+// 			padding-right: $pad;
+// 		}
+// 		&[class*="-3-4"] {
+// 			width: 75%;
+// 			padding-right: $pad;
+// 		}
+// 	}
+// }
+
+
+
+// .input-group {
+// 	@extend %clearfix;
+// 	margin-bottom: $pad;
+
+// 	> * {
+// 		margin: 0;
+// 		float: left;
+// 		border-radius: 0;
+// 	}
+
+// 	> * {
+// 		&:first-child {
+// 			border-top-left-radius: $pad/2;
+// 			border-bottom-left-radius: $pad/2;
+// 		}
+// 		&:last-child {
+// 			border-top-right-radius: $pad/2;
+// 			border-bottom-right-radius: $pad/2;
+// 		}
+// 	}
+// }
+
+// .form-number {
+// 	> input {
+// 		max-width: 50px;
+// 		height: 40px;
+// 		text-align: center;
+// 	}
+// }
+
+// .addon-after {
+// 	left: -$pad;
+// }
+
+// input[type="text"], input[type="email"], select, textarea {
+// 	width: 100%;
 	
-	&.ng-dirty {
-		border: solid thin $color-lightgray;
-	}
-	&.ng-invalid {
-		border: solid thin orange;
-		&:before {
-			content: "x";
-		}
-	}
-	&.ng-valid {
-		border: solid thin $color-lightgray;
-	}
-	&.ng-pristine {
-		border: solid thin $color-lightgray;
-	}
-	&:focus {
-		outline: none;
-	}
-}
+// 	&.ng-dirty {
+// 		border: solid thin $color-lightgray;
+// 	}
+// 	&.ng-invalid {
+// 		border: solid thin orange;
+// 	}
+// 	&.ng-valid {
+// 		border: solid thin $color-lightgray;
+// 	}
+// 	&.ng-pristine {
+// 		border: solid thin $color-lightgray;
+// 	}
+// 	&:focus {
+// 		outline: none;
+// 	}
+// }
 
-label {
-	margin: .5em 0 0;
-	font-size: 1em;
-	line-height: 1.5em;
-	display: block;
-	height: 1.5em;
-}
+// label {
+// 	margin: .5em 0 0;
+// 	font-size: 1em;
+// 	line-height: 1.5em;
+// 	display: block;
+// 	height: 1.5em;
+// }
 
-select {
-	border: none;
-	background: none;
-	font-size: 10pt;
-	height: $pad*2;
-	line-height: $pad*2;
-	padding-right: $pad;
+// .form-label {
+// 	margin-top: $pad;
+// 	margin-bottom: 0;
+// 	font-size: 14pt;
+// }
 
-	@include background-image(linear-gradient(#fff 50%, $color-offwhite));
-}
+// select {
+// 	border: none;
+// 	background: none;
+// 	font-size: 10pt;
+// 	height: $pad*2;
+// 	line-height: $pad*2;
+// 	padding-right: $pad;
+
+// 	@include background-image(linear-gradient(#fff 50%, #EFF1F4));
+// }

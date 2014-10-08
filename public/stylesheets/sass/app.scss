@@ -6,7 +6,7 @@
 @import "utl";
 @import "typography";
 @import "angular";
-@import "forms";
+// @import "forms";
 @import "tables";
 @import "interactions";
 
@@ -16,29 +16,8 @@ html, body, [role="main"] {
 	background-image: url(http://subtlepatterns.com/patterns/white_wall_hash.png);
 }
 
-[class*="block"] {
-	background-color: #fff;
-	border: $color-offwhite;
-	padding: $pad;
-	border-radius: $pad/2;
-	margin-bottom: $pad;
-	position: relative;
-	border: solid thin $color-lightgray;
-
-	> footer.footer {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		border-bottom-right-radius: $pad/2;
-		border-bottom-left-radius: $pad/2;
-		background-color: $color-offwhite;
-		padding: $pad/2;
-		border-top: solid thin darken($color-offwhite, 5%);
-	}
-	&[class*="-footer"] {
-		padding-bottom: 56px;
-	}
+.col-1 {
+	padding-right: 0;
 }
 
 .home {
@@ -46,8 +25,8 @@ html, body, [role="main"] {
 }
 
 .container {
+	position:  relative;
 	max-width: 960px;
-	padding: $pad;
 }
 
 [role="main"] {
@@ -55,7 +34,7 @@ html, body, [role="main"] {
 }
 
 #menu-primary {
-	background: $color-red;
+	background: $color-navyblue;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -66,11 +45,6 @@ html, body, [role="main"] {
 		}
 	}
 }
-
-.open {
-
-}
-
 
 .menu-style-1 {
 	border-right: solid thin #fff;
@@ -83,65 +57,82 @@ html, body, [role="main"] {
 		display: block;
 		text-decoration: none;
 		color: darken($color-offwhite, 5%);
-		text-shadow: 0 -1px darken($color-red, 15%);
+		text-shadow: 0 -1px rgba(black, 0.6);
 
 		&:hover {
-			background: darken($color-red, 10%);
+			background: $color-darkblue;
 			color: #fff;
 		}
 	}
 	&.active {
-		background: darken($color-red, 10%)
+		background: $color-darkblue;
 	}
 }
 
 .selectbox {
 	height: 32px;
 	line-height: 32px;
-	padding: 0 $pad;
-	background: lightgray;
-	border-radius: 5px;
-	box-shadow: 0 1px rgba(black, 0.6);
+	
 	position: relative;
+	color: $color-darkblue;
+	display: block;
 
-	&:after {
-		content: "\f123";
-		font-family: "Ionicons";
-		position: absolute;
-		right: $pad;
-	}
+	
 
 	&.open {
-		background: darken(lightgray, 10%);
-		box-shadow: 0 -1px rgba(black, 0.6); 
-		border-radius: 5px 5px 0 0;
-		&:after {
-			content: "\f126";
+		> .selectbox-name {
+			background: #fff;
+			border-radius: 5px 5px 0 0;
+			border-bottom: none;
+			display: block;
+			position: relative;
+			box-shadow: 0 -1px $color-offwhite, 1px 0 $color-offwhite, -1px 0 $color-offwhite;
+
+			&:after {
+				content: "\f126";
+			}
+		}
+	}
+
+	.selectbox-name {
+		text-transform: capitalize;
+		color: darken($color-lightgray, 50%);
+		font-weight: bold;
+		padding: 0 $pad/2;
+			&:after {
+			content: "\f123";
+			font-family: "Ionicons";
+			position: absolute;
+			color: $color-darkblue;
+			right: $pad/2;
 		}
 	}
 
 	&:hover {
 		cursor: pointer;
 	}
+
 	.sub-menu {
 		width: 100%;
 		border-radius: 0 0 5px 5px;
+		border-top: none;
+		box-shadow: 0 1px $color-offwhite, 1px 0 $color-offwhite, -1px 0 $color-offwhite;
 
 		> li {
-			margin-left: -$pad;
-			margin-right: $pad;
 			overflow: hidden;
 
 			a {
-			padding: 0 $pad;
+			padding: 0 $pad/2;
 			background: #fff;
 			display: block;
 			white-space: nowrap;
-			background-color: lightgray;
+			background-color: #fff;
 			overflow: hidden;
+			text-decoration: none;
+			color: darken($color-lightgray, 30%);
 
 				&:hover {
-					background: gray;
+					background: $color-darkblue;
 					color: #fff;
 					text-decoration: none;
 				}
@@ -156,11 +147,7 @@ html, body, [role="main"] {
 
 .module {
 	position: relative;
-	padding: $pad;
-	border-radius: $pad/2;
-	background-color: #fff;
-	border: solid thin $color-lightgray;
-	padding-bottom: 60px;
+
 
 	.module-footer {
 		position: absolute;
@@ -175,14 +162,6 @@ html, body, [role="main"] {
 	}
 }
 
-.form-group {
-	margin-bottom: 40px;
-}
-
-.form-inline {
-	display: inline-block;
-	margin-right: $pad;
-}
 .form-input-number {
 	@extend %clearfix;
 	display: inline-block;
@@ -204,4 +183,14 @@ html, body, [role="main"] {
 
 .table-head {
 	// border-bottom: solid thin gray;
+}
+
+[class*="position-"] {
+	position: absolute;
+	&[class*="top"] {
+		top: 0;
+	}
+	&[class*="right"] {
+		right: 0;
+	}
 }

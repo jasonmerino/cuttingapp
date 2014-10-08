@@ -30,6 +30,7 @@
     "angular-ui-router": "~0.2.11",
     "angular-ui-router.stateHelper": "~1.1.0",
     "angular-ui-select2": "~0.0.5",
-    "angular-us-states": "~0.1.1"
+    "angular-us-states": "~0.1.1",
+    "checklist-model": "~0.1.3"
   }
 }

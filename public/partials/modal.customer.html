@@ -1,0 +1,61 @@
+<div id="modal" ng-controller="newCustomerCtrl">
+	<div class="container block modal">
+		<header class="header">
+			<h3>New Customer</h3>
+			<i class="float-right ion-close-round button" ng-click="remove()"></i>
+		</header>
+		<form ng-submit="submit()" role="form" ng-contorller="newCustomerCtrl">
+			<div class="grid">
+				<div class="col-1-2">
+					<div class="form-group">
+						<div class="inline-1-2">
+							<label>Fist Name</label>
+							<input type="text" ng-model="customerData.first_name" ng-required="true">
+						</div>
+						<div class="inline-1-2">
+							<label>Last Name</label>
+							<input type="text" ng-model="customerData.last_name">
+						</div>
+						<div class="inline-1-2">
+							<label>Home Number</label>
+							<input type="text" ng-model="customerData.home_phone">
+						</div>
+						<div class="inline-1-2">
+							<label>Cell Number</label>
+							<input type="text" ng-model="customerData.cell_phone">
+						</div>
+						<div class="inline-1">
+							<label>Email Address</label>
+							<input type="email" ng-model="customerData.email"></input>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-2">
+					<div class="form-group">
+						<div class="inline-1">
+							<label>Street</label>
+							<input type="text" ng-model="customerData.street">
+						</div>
+						<div class="inline-1">
+							<label>Street</label>
+							<input type="text" ng-model="customerData.street_cont">
+						</div>
+						<div class="inline-1-2">
+							<label>City</label>
+							<input type="text" ng-model="customerData.city">
+						</div>
+						<div class="inline-1-4">
+							<label>State</label>
+							<select ng-model="customerData.state" ng-options="option.abbreviation as option.abbreviation for option in UsStates"></select>
+						</div>
+						<div class="inline-1-4">
+							<label>Zip</label>
+							<input type="text" ng-model="customerData.zip">
+						</div>
+					</div>
+				</div>
+			</div>
+			<input class="float-right" type="submit" value="Save" />
+		</form>
+	</div>
+</div>

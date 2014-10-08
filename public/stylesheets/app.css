@@ -17,6 +17,113 @@ label {
 .menu-inline > li {
   float: left; }
 
+hr {
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0; }
+
+[class*="width-"] {
+  display: inline-block;
+  padding-right: 1rem; }
+  [class*="width-"][class*='-1'] {
+    width: 1rem; }
+  [class*="width-"][class*='-2'] {
+    width: 2rem; }
+  [class*="width-"][class*='-3'] {
+    width: 3rem; }
+  [class*="width-"][class*='-4'] {
+    width: 4rem; }
+  [class*="width-"][class*='-5'] {
+    width: 5rem; }
+  [class*="width-"][class*='-6'] {
+    width: 6rem; }
+  [class*="width-"][class*='-7'] {
+    width: 7rem; }
+  [class*="width-"][class*='-8'] {
+    width: 8rem; }
+  [class*="width-"][class*='-9'] {
+    width: 9rem; }
+  [class*="width-"][class*='-10'] {
+    width: 10rem; }
+  [class*="width-"][class*='-11'] {
+    width: 11rem; }
+  [class*="width-"][class*='-12'] {
+    width: 12rem; }
+  [class*="width-"][class*='-13'] {
+    width: 13rem; }
+  [class*="width-"][class*='-14'] {
+    width: 14rem; }
+  [class*="width-"][class*='-15'] {
+    width: 15rem; }
+  [class*="width-"][class*='-16'] {
+    width: 16rem; }
+  [class*="width-"][class*='-17'] {
+    width: 17rem; }
+  [class*="width-"][class*='-18'] {
+    width: 18rem; }
+  [class*="width-"][class*='-19'] {
+    width: 19rem; }
+  [class*="width-"][class*='-20'] {
+    width: 20rem; }
+
+.align-right {
+  text-align: right; }
+
+ul.unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ul.unstyled > li {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+
+[class*="block"] {
+  background-color: #fff;
+  border: #D9DAD0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 0 1px #D9DAD0, 0 -1px #D9DAD0, 1px 0 #D9DAD0, -1px 0 #D9DAD0; }
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 1001;
+  padding-top: 40px;
+  background: rgba(0, 0, 0, 0.9); }
+
+#modalbg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; }
+
+[class*="modal"] {
+  padding-top: 40px; }
+  [class*="modal"] .header {
+    position: absolute;
+    height: 40px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #D9DAD0;
+    color: #fff;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 0 1rem; }
+    [class*="modal"] .header > * {
+      line-height: 40px;
+      display: inline-block; }
+
 .grid-nested {
   margin-bottom: 0; }
 
@@ -28,10 +135,28 @@ li {
     z-index: 1001; }
 
 li.open > .sub-menu {
-  display: block; }
+  display: block;
+  left: 0;
+  top: 100%; }
 
 .float-right {
   float: right; }
+
+[class*="inline-"] {
+  float: left;
+  margin-top: 0; }
+  [class*="inline-"][class*="-1"] {
+    width: 100%;
+    padding-right: 1rem; }
+  [class*="inline-"][class*="-1-2"] {
+    width: 50%;
+    padding-right: 1rem; }
+  [class*="inline-"][class*="-1-4"] {
+    width: 25%;
+    padding-right: 1rem; }
+  [class*="inline-"][class*="-3-4"] {
+    width: 75%;
+    padding-right: 1rem; }
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -56,66 +181,10 @@ h2 {
 .form-control.ng-invalid:focus {
   outline: red; }
 
-input[type="text"], input[type="email"], input[type="search"] {
-  height: 2rem;
-  line-height: 1rem;
-  padding: 3px 0.5rem;
-  width: 100%;
-  border: none;
-  border: solid thin #F2F2F2;
-  border-radius: 0.25rem; }
-  input[type="text"].inline, input[type="email"].inline, input[type="search"].inline {
-    width: 25%;
-    float: left; }
-
-.input-group {
-  margin-bottom: 1rem; }
-  .input-group > *:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
-  .input-group > *:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0; }
-
-.addon-after {
-  left: -1rem; }
-
-input, select, textarea {
-  width: 100%; }
-  input.ng-dirty, select.ng-dirty, textarea.ng-dirty {
-    border: solid thin #D4D4D4; }
-  input.ng-invalid, select.ng-invalid, textarea.ng-invalid {
-    border: solid thin orange; }
-    input.ng-invalid:before, select.ng-invalid:before, textarea.ng-invalid:before {
-      content: "x"; }
-  input.ng-valid, select.ng-valid, textarea.ng-valid {
-    border: solid thin #D4D4D4; }
-  input.ng-pristine, select.ng-pristine, textarea.ng-pristine {
-    border: solid thin #D4D4D4; }
-  input:focus, select:focus, textarea:focus {
-    outline: none; }
-
-label {
-  margin: .5em 0 0;
-  font-size: 1em;
-  line-height: 1.5em;
-  display: block;
-  height: 1.5em; }
-
-select {
-  border: none;
-  background: none;
-  font-size: 10pt;
-  height: 2rem;
-  line-height: 2rem;
-  padding-right: 1rem;
-  background-image: -webkit-linear-gradient(#fff 50%, #F2F2F2);
-  background-image: linear-gradient(to   , #F2F2F2); }
-
 table {
   width: 100%; }
   table thead > tr {
-    background-color: #F2F2F2;
+    background-color: #D9DAD0;
     border-bottom: none; }
     table thead > tr > th {
       text-align: left;
@@ -125,71 +194,34 @@ table {
       padding: 0 1rem;
       font-size: 10pt; }
   table tbody > tr {
-    border-bottom: solid thin #F2F2F2; }
+    border-bottom: solid thin #D9DAD0; }
     table tbody > tr:hover {
-      background-color: #fafafa; }
+      background-color: #f5f5f2; }
     table tbody > tr td {
       padding: 0.5rem; }
     table tbody > tr:last-of-type {
       border-bottom: none; }
-
-input[type="submit"], button {
-  background: none;
-  border: none;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  padding: 0 1rem;
-  border-radius: 0.5rem;
-  background: #e5e5e5;
-  color: #6e6e6e;
-  border-bottom: solid thin #d8d8d8;
-  text-shadow: 0 1px #fff;
-  -webkit-transition: background-color, 0.25s;
-  -moz-transition: background-color, 0.25s;
-  transition: background-color, 0.25s; }
-  input[type="submit"]:hover, button:hover {
-    background-color: #d8d8d8; }
-  input[type="submit"]:focus, button:focus {
-    outline: none; }
 
 html, body, [role="main"] {
   height: 100%;
   font-family: "Raleway", sans-serif;
   background-image: url(http://subtlepatterns.com/patterns/white_wall_hash.png); }
 
-[class*="block"] {
-  background-color: #fff;
-  border: #F2F2F2;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  border: solid thin #D4D4D4; }
-  [class*="block"] > footer.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    background-color: #F2F2F2;
-    padding: 0.5rem;
-    border-top: solid thin #e5e5e5; }
-  [class*="block"][class*="-footer"] {
-    padding-bottom: 56px; }
+.col-1 {
+  padding-right: 0; }
 
 .home {
   background: url(../images/hero-image.jpg) no-repeat center 40px; }
 
 .container {
-  max-width: 960px;
-  padding: 1rem; }
+  position: relative;
+  max-width: 960px; }
 
 [role="main"] {
   padding-top: 40px; }
 
 #menu-primary {
-  background: #CD3802;
+  background: #455868;
   position: fixed;
   top: 0;
   left: 0;
@@ -205,63 +237,67 @@ html, body, [role="main"] {
     padding: 0 2rem;
     display: block;
     text-decoration: none;
-    color: #e5e5e5;
-    text-shadow: 0 -1px #812301; }
+    color: #cdcfc2;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.6); }
     .menu-style-1 > a:hover {
-      background: #9a2a02;
+      background: #32434F;
       color: #fff; }
   .menu-style-1.active {
-    background: #9a2a02; }
+    background: #32434F; }
 
 .selectbox {
   height: 32px;
   line-height: 32px;
-  padding: 0 1rem;
-  background: lightgray;
-  border-radius: 5px;
-  box-shadow: 0 1px rgba(0, 0, 0, 0.6);
-  position: relative; }
-  .selectbox:after {
-    content: "\f123";
-    font-family: "Ionicons";
-    position: absolute;
-    right: 1rem; }
-  .selectbox.open {
-    background: #b9b9b9;
-    box-shadow: 0 -1px rgba(0, 0, 0, 0.6);
-    border-radius: 5px 5px 0 0; }
-    .selectbox.open:after {
+  position: relative;
+  color: #32434F;
+  display: block; }
+  .selectbox.open > .selectbox-name {
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+    display: block;
+    position: relative;
+    box-shadow: 0 -1px #D9DAD0, 1px 0 #D9DAD0, -1px 0 #D9DAD0; }
+    .selectbox.open > .selectbox-name:after {
       content: "\f126"; }
+  .selectbox .selectbox-name {
+    text-transform: capitalize;
+    color: #555555;
+    font-weight: bold;
+    padding: 0 0.5rem; }
+    .selectbox .selectbox-name:after {
+      content: "\f123";
+      font-family: "Ionicons";
+      position: absolute;
+      color: #32434F;
+      right: 0.5rem; }
   .selectbox:hover {
     cursor: pointer; }
   .selectbox .sub-menu {
     width: 100%;
-    border-radius: 0 0 5px 5px; }
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    box-shadow: 0 1px #D9DAD0, 1px 0 #D9DAD0, -1px 0 #D9DAD0; }
     .selectbox .sub-menu > li {
-      margin-left: -1rem;
-      margin-right: 1rem;
       overflow: hidden; }
       .selectbox .sub-menu > li a {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
         background: #fff;
         display: block;
         white-space: nowrap;
-        background-color: lightgray;
-        overflow: hidden; }
+        background-color: #fff;
+        overflow: hidden;
+        text-decoration: none;
+        color: #888888; }
         .selectbox .sub-menu > li a:hover {
-          background: gray;
+          background: #32434F;
           color: #fff;
           text-decoration: none; }
       .selectbox .sub-menu > li:last-of-type {
         border-radius: 0 0 5px 5px; }
 
 .module {
-  position: relative;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  border: solid thin #D4D4D4;
-  padding-bottom: 60px; }
+  position: relative; }
   .module .module-footer {
     position: absolute;
     width: 100%;
@@ -271,13 +307,6 @@ html, body, [role="main"] {
     border-top: solid thin gray;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem; }
-
-.form-group {
-  margin-bottom: 40px; }
-
-.form-inline {
-  display: inline-block;
-  margin-right: 1rem; }
 
 .form-input-number {
   display: inline-block;
@@ -292,3 +321,10 @@ html, body, [role="main"] {
     height: 25px;
     line-height: 25px;
     padding: 0 4px; }
+
+[class*="position-"] {
+  position: absolute; }
+  [class*="position-"][class*="top"] {
+    top: 0; }
+  [class*="position-"][class*="right"] {
+    right: 0; }

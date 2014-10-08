@@ -1,0 +1,38 @@
+<!-- Cutting Instructions Form -->
+
+<h2 page-name></h2>
+<div class="block">
+	<form role="form">
+		<div class="inline-1-2 form-group">
+	  	<input type="search" ng-model="filter" placeholder="Search Users..." class="form-control">
+	    <button class="btn btn-default"ng-click="filter = ''">Clear</button>
+  	</div>
+  	<div class="inline-1-2">
+  		<button class="btn btn-default pull-right" ng-click="launchModal()">+ Add New</button>
+  	</div>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Created</th>
+				<th>Animal</th>
+				<th>Owner</th>
+				<th>Price</th>
+				<th>Weight</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="instruction in instructions | orderBy: 'animal' | filter:filter:strict " ng-click="">
+				<td><a ng-click="deleteInstruction(instruction._id)" class="button ion-close"></a></td>
+				<td>{{ instruction.created }}</td>
+				<td>{{ instruction.animal }}</td>
+				<td ng-bind="customerName(instruction._id)"></td>
+				<td>{{ instruction.price }}</td>
+				<td>{{ instruction.weight }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- ng-click="changeSelect(animal.name, animal.slug)" -->

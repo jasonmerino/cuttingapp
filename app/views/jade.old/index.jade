@@ -1,0 +1,8 @@
+extends layout
+
+block content
+
+	header(main-menu)
+
+	div(role='main' ng-controller="app" ng-class='pageClass')
+		div.container(ui-view )

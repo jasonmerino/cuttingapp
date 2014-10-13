@@ -1,0 +1,67 @@
+{
+  "products": [{
+    "name"    : "Regular",
+    "category": "Salami",
+    "price"   : 4.29
+  },
+  {
+    "name"    : "Jalepeno",
+    "category": "Salami",
+    "price"   : 4.29
+  },
+  {
+    "name"    : "Cheddar",
+    "category": "Salami",
+    "price"   : 4.29
+  },
+  {
+    "name"    : "Peppered",
+    "category": "Snack Stix",
+    "price"   : 9.99
+  },
+  {
+    "name"    : "Teriaky",
+    "category": "Snack Stix",
+    "price"   : 9.99
+  },
+  {
+    "name"    : "Mild Cheddar",
+    "category": "Snack Stix",
+    "price"   : 9.99
+  },
+  {
+    "name"    : "Hot Cheddar",
+    "category": "Snack Stix",
+    "price"   : 9.99
+  },
+  {
+    "name"    : "North Country",
+    "category": "Sausage",
+    "price"   : 4.79
+  },
+  {
+    "name"    : "German",
+    "category": "Sausage",
+    "price"   : 4.79
+  },
+  {
+    "name"    : "Venison &amp; Swiss",
+    "category": "Sausage",
+    "price"   : 4.79
+  },
+  {
+    "name"    : "Campire Country",
+    "category": "Sausage",
+    "price"   : 4.79
+  },
+  {
+    "name"    : "Jalapeno Cheddar",
+    "category": "Sausage",
+    "price"   : 4.79
+  },
+  {
+    "name"    : "Hawaiian Jalapeno",
+    "category": "Sausage",
+    "price"   : 4.79
+  }]
+}

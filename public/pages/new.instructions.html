@@ -1,0 +1,87 @@
+<h2>New {{ animal_name }} Cutting Instructions</h2>
+<div class="block">
+	<form name="cuttingInstructions" class="form-horizontal" role="form">
+		<div class="form-group">
+			<div class="col-md-6">
+				<label>Weight</label>
+				<input class="form-control" type="text" ng-model="formValues.weight">
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-9">
+						<label>Select Customer</label>
+						<select ng-model="customer_id" class="form-control" ng-options="option._id as (option.first_name + ' ' + option.last_name) for option in customers | orderBy: 'last_name'">
+							<option value="">-- Select Customer --</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label>&nbsp;</label>
+						<button class="btn btn-primary pull-right" ng-click="launchModal()">+ Add New</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-6">
+					
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div  ng-repeat="form in forms" class="section">
+					<h4 class="form-label">{{ form.name }}</h4>
+					<div class="form-group">	
+						<form-template></form-template>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<div ng-repeat="(key, value) in formValues.values | orderBy: key ">
+						<dt>{{ key | camelCaseToHuman }}</dt>
+						<dd ng-bind="returnValue(key)"></dd>
+					</div>
+					<div>
+					<dt>Total Products Cost</dt>
+					<dd>{{ totalProductCost() | currency }}</dd>
+					</div>
+					<div>
+						<dt>Total Cutting Cost</dt>
+						<dd>{{ totalCutting() | currency}}</dd>
+					</div>
+					<div>
+						<dt>Total</dt>
+						<dd>{{ totalCost() | currency }}</dd>
+					</div>
+				</dl>
+				<dl class="dl-horizontal">
+					<div class="row" ng-repeat="product in products">
+						<div class="col-md-4">
+							<select 
+								class="form-control" 
+								ng-model="product_price" 
+								ng-options="(product.category +' '+ product.name) group by product.category for product in product.products">
+								<option value="">--Select Product--</option>
+								<!-- <option value="1.0">Sausage</option>
+								<option value="1.5">Salami</option>
+								<option value="1.4">Snack Stix</option> -->
+							</select>
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control" ng-model="product_amount" placeholder="lbs" />
+						</div>
+						<div class="col-md-3">
+							<span ng-bind="productCost(product_price, product_amount, $index)"></span>
+						</div>
+						<div class="col-md-1">
+							<button ng-click="removeProduct($index)">-</button>
+						</div>
+					</div>
+					<button class="btn btn-primary" ng-click="addProduct()">Add Product</button>
+				</dl>
+			</div>
+		</div>
+		<button ng-click="submit()" class="btn btn-primary">Submit</button>
+		<button ng-click="cancel()" class="btn btn-warning">Cancel</button>
+	</form>
+</div>

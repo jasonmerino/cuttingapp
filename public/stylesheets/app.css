@@ -88,42 +88,6 @@ ul.unstyled {
   position: relative;
   box-shadow: 0 1px #D9DAD0, 0 -1px #D9DAD0, 1px 0 #D9DAD0, -1px 0 #D9DAD0; }
 
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  z-index: 1001;
-  padding-top: 40px;
-  background: rgba(0, 0, 0, 0.9); }
-
-#modalbg {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000; }
-
-[class*="modal"] {
-  padding-top: 40px; }
-  [class*="modal"] .header {
-    position: absolute;
-    height: 40px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #D9DAD0;
-    color: #fff;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    padding: 0 1rem; }
-    [class*="modal"] .header > * {
-      line-height: 40px;
-      display: inline-block; }
-
 .grid-nested {
   margin-bottom: 0; }
 
@@ -132,7 +96,8 @@ li {
   li > .sub-menu {
     display: none;
     position: absolute;
-    z-index: 1001; }
+    z-index: 1001;
+    min-width: 100%; }
 
 li.open > .sub-menu {
   display: block;
@@ -181,6 +146,15 @@ h2 {
 .form-control.ng-invalid:focus {
   outline: red; }
 
+.inset-button {
+  position: relative; }
+  .inset-button > input {
+    padding-right: 75px; }
+  .inset-button > button, .inset-button .button {
+    position: absolute;
+    top: 0;
+    right: 0; }
+
 table {
   width: 100%; }
   table thead > tr {
@@ -203,9 +177,17 @@ table {
       border-bottom: none; }
 
 html, body, [role="main"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   font-family: "Raleway", sans-serif;
   background-image: url(http://subtlepatterns.com/patterns/white_wall_hash.png); }
+
+.price:before {
+  content: "$";
+  display: inline-block; }
 
 .col-1 {
   padding-right: 0; }
@@ -228,6 +210,50 @@ html, body, [role="main"] {
   width: 100%;
   z-index: 999; }
 
+label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  label > input[type="checkbox"] {
+    visibility: hidden; }
+    label > input[type="checkbox"]:before {
+      content: "";
+      visibility: visible;
+      font-family: "Ionicons";
+      line-height: .5em;
+      width: 14px;
+      height: 14px;
+      border: solid thin black;
+      display: block;
+      font-size: 18px;
+      color: #455868;
+      padding-left: 1px; }
+    label > input[type="checkbox"]:checked:before {
+      content: "\f122"; }
+  label > input[type="radio"] {
+    visibility: hidden; }
+    label > input[type="radio"]:before {
+      content: "";
+      visibility: visible;
+      font-family: "Ionicons";
+      line-height: .5em;
+      width: 14px;
+      height: 14px;
+      border: solid thin black;
+      display: block;
+      font-size: 20px;
+      border-radius: 7px; }
+    label > input[type="radio"]:checked:before {
+      box-shadow: 0 0 0px 2px white inset, 0 0 1px 6px #455868 inset; }
+
+.form-label {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem; }
+
 .menu-style-1 {
   border-right: solid thin #fff; }
   .menu-style-1 > a {
@@ -244,6 +270,22 @@ html, body, [role="main"] {
       color: #fff; }
   .menu-style-1.active {
     background: #32434F; }
+  .menu-style-1:hover .sub-menu {
+    display: block; }
+
+.menu-style-2 {
+  min-width: 100%; }
+  .menu-style-2 > a {
+    background-color: #455868;
+    display: block;
+    padding: 0 2rem;
+    color: #fff;
+    white-space: nowrap;
+    height: 40px;
+    line-height: 40px; }
+    .menu-style-2 > a:hover {
+      background-color: #32434F;
+      text-decoration: none; }
 
 .selectbox {
   height: 32px;
@@ -295,6 +337,9 @@ html, body, [role="main"] {
           text-decoration: none; }
       .selectbox .sub-menu > li:last-of-type {
         border-radius: 0 0 5px 5px; }
+
+.instructions-modal {
+  padding: 15px; }
 
 .module {
   position: relative; }

@@ -1,5 +1,14 @@
 <nav id="menu-primary" ng-controller="headerCtrl">
 	<ul class="menu-inline">
-		<li ng-repeat="page in pages" class="menu-style-1" ui-sref-active="active"><a ui-sref="{{page.url}}">{{page.name}}</a></li>
+		<li class="menu-style-1" ui-sref-active="active"><a ui-sref="home">Home</a></li>
+		<li class="menu-style-1" ui-sref-active="active"><a ui-sref="new_cuttinginstructions" ng-disabled="true">New Instructions <i class="ion-arrow-down-b"></i></a>
+			<ul class="sub-menu">
+				<li class="menu-style-2" ng-repeat="(key, value) in animals | orderBy: 'name'" ui-sref-active="active">
+					<a ui-sref="new_cuttinginstructions({forms_id: key})">{{ value.name }}</a>
+				</li>
+			</ul>
+		</li>
+		<li class="menu-style-1" ui-sref-active="active"><a ui-sref="instructions">Instructions</a></li>
+		<li class="menu-style-1" ui-sref-active="active"><a ui-sref="customers">Customers</a></li>
 	</ul>
 </nav>

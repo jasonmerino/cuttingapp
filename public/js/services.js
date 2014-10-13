@@ -56,6 +56,9 @@ angular.module('myApp.services', [])
       },{
         name: 'Customers',
         url: 'customers'
+      },{
+        name: 'New Cuttinginstruction',
+        url: 'new_cuttinginstructions'
       }]
 	})
 	.factory('todaysDate', function(){
@@ -74,119 +77,67 @@ angular.module('myApp.services', [])
 
       return today = mm+'/'+dd+'/'+yyyy;
 	})
-	// .service('forms', function(){
-	// 	return {
-	// 			'Antelope': {
-	// 				templateUrl: 		'partials/cuttingforms/wildgame.html',
-	// 				pricePerPound: 	1.30,
-	// 				minPrice: 			130
-	// 		}
-	// 	}
-	// })
 	.factory('animals', function(){
-		return [{
-	      slug: "hog",
-	      name: "Hog"
-      },
-      {
-        slug: "deer",
-        name: "Deer"
-      },
-      {
-        slug: "antelope",
-        name: "Antelope"
-      },
-      {
-        slug: "wildhog",
-        name: "Wild Hog"
-      },
-      {
-        slug: "bear",
-        name: "Bear"
-      },
-      {
-        slug: "sheep",
-        name: "Sheep"
-      },
-      {
-        slug: "buffalo",
-        name: "Buffalo"
-      },
-      {
-        slug: "duckpheasantgoose",
-        name: "Duck/Pheasant/Goose"
-      },
-      {
-        slug: "goat",
-        name: "Goat"
-      },
-      {
-        slug: "lamb",
-        name: "Lamb"
-      },
-      {
-        slug: "beef",
-        name: "Beef"
-      },
-      {
-        slug: "oryx",
-        name: "Oryx"
-      },
-      {
-        slug: "caribu",
-        name: "Caribu"
-      }
-    ];
-	})
-
-
-
-.service('forms', function(){
 		return {
-				'Antelope': {
-					pricePerPound: 1.3,
-					minPrice: 130,
-					customer_id: '',
-		      animal: '',
-		      weight: '',
-		      price: '',
-		      created: '',
-		      completed: '',
-					forms: [{
-						name: 'Backstraps',
-						templateUrl: 'checkbox',
-						model: '',
-						values: [
-							'Chops',
-							'Roasts',
-							'Grind'
-							]
-						},{
-							name: 'Tenerloins',
-							templateUrl: 'radio',
-							model: '',
-							values: [
-								'Yes',
-								'No',
-								'Missing',
-								'Could not be saved'
-							]
-						},{
-							name: 'Steaks',
-							templateUrl: 'checkbox',
-							model: '',
-							values: [
-								'Tenderized',
-								'Regular',
-								'Roasts',
-								'Grind'
-							]
-						},{
-							name: 'Stew',
-							templateUrl: '',
-							model: '',
-							values: []
-						}]
-					},
+			'deer': {
+        name: "Deer",
+        form: "wildgame.json"
+      },
+      'antelope': {
+        name: "Antelope",
+        form: "wildgame.json"
+      },
+      'caribu': {
+        name: "Caribu",
+        form: "wildgame.json"
+      },
+      'wildhog': {
+        name: "Wild Hog",
+        form: "wildgame.json"
+      },
+      'bear': {
+        name: "Bear",
+        form: "wildgame.json"
+      },
+      'sheep': {
+      	name: "Sheep",
+        form: "wildgame.json"
+      },
+      'bufflo': {
+       	name: "Buffalo",
+        form: "wildgame.json"
+      },
+      'oryx': {
+        name: "Oryx",
+        form: "wildgame.json"
+      },
+      'duckpheasantgoose': {
+        name: "Duck/Pheasant/Goose",
+        form: "foul.json"
+      },
+      'hog': {
+	      name: "Hog",
+	      form: "hog.json"
+      },
+      'goat': {
+        name: "Goat",
+        form: "caprinae.json"
+      },
+      'lamb': {
+        name: "Lamb",
+        form: "caprinae.json"
+      },
+      'beef': {
+        name: "Beef",
+        form: "beef.json"
+      }
+    };
+	})
+	.factory('formsService', function($http){
+		return {
+			get 	 : function(tplUrl) {
+				return $http.get('forms/' + tplUrl);
+			}
 		}
-	});
+	})
+  ;

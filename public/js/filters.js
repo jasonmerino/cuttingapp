@@ -16,4 +16,10 @@ angular.module('myApp.filters', [])
 			return input.substring(0,1).toUpperCase()+input.substring(1);
 			}
 		}
+	})
+
+  .filter('camelCaseToHuman', function() {
+	  return function(input) {
+	    return input.charAt(0).toUpperCase() + input.substr(1).replace(/[A-Z]/g, ' $&');
+	  }
 	});

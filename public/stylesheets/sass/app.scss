@@ -6,14 +6,23 @@
 @import "utl";
 @import "typography";
 @import "angular";
-// @import "forms";
+@import "forms";
 @import "tables";
 @import "interactions";
 
 html, body, [role="main"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
 	font-family: "Raleway", sans-serif;
 	background-image: url(http://subtlepatterns.com/patterns/white_wall_hash.png);
+}
+
+.price:before {
+	content: "$";
+	display: inline-block;
 }
 
 .col-1 {
@@ -46,6 +55,67 @@ html, body, [role="main"] {
 	}
 }
 
+label {
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+	> input[type="checkbox"] {
+		visibility: hidden;
+
+		&:before {
+			content: "";
+			visibility: visible;
+			font-family: "Ionicons";
+			line-height: .5em;
+			width: 14px;
+			height: 14px;
+			border: solid thin black;
+			// border-top: none;
+			// border-right: none;
+			display: block;
+			font-size: 18px;
+			color: $color-navyblue;
+			padding-left: 1px;
+			// border-radius: 3px;
+		}
+
+		&:checked:before {
+			content: "\f122";
+
+		}
+	}
+
+	> input[type="radio"] {
+		visibility: hidden;
+
+		&:before {
+			content: "";
+			visibility: visible;
+			font-family: "Ionicons";
+			line-height: .5em;
+			width: 14px;
+			height: 14px;
+			border: solid thin black;
+			display: block;
+			font-size: 20px;
+			border-radius: 7px;
+		}
+		&:checked:before {
+			box-shadow: 0 0 0px 2px white inset, 0 0 1px 6px $color-navyblue inset;
+		}
+	}
+}
+
+.form-label {
+	margin: 0;
+	margin-bottom: $pad/2;
+	margin-top: $pad*2;
+}
+
 .menu-style-1 {
 	border-right: solid thin #fff;
 
@@ -66,6 +136,29 @@ html, body, [role="main"] {
 	}
 	&.active {
 		background: $color-darkblue;
+	}
+	&:hover {
+		.sub-menu {
+			display: block;
+		}
+	}
+}
+
+.menu-style-2 {
+	min-width: 100%;
+	
+	> a {
+		background-color: $color-navyblue;
+		display: block;
+		padding: 0 $pad*2;
+		color: #fff;
+		white-space: nowrap;
+		height: 40px;
+		line-height: 40px;
+		&:hover {
+			background-color: $color-darkblue;
+			text-decoration: none;
+		}
 	}
 }
 
@@ -143,6 +236,10 @@ html, body, [role="main"] {
 			}
 		}
 	}
+}
+
+.instructions-modal {
+	padding: 15px;
 }
 
 .module {

@@ -2,30 +2,93 @@ angular.module("myApp.templates", []).
 
   run(['$templateCache', function($templateCache, $scope) {
   $templateCache.put("select",
-    "<select class=\"form-control\" name=\"{{formVars[model]}}\" ng-model=\"formVars[model]\" ng-options=\"option.value as option.name for option in formVars.values\">" +
-    "</select>\n"
+    "<div class=\"col-md-12\">" +
+      "<select class=\"form-control\" name=\"{{ id }}\" ng-init=\"id = $id\" ng-model=\"formValues.values[form.model]\" ng-options=\"option for option in form.values\">" +
+      "</select>\n"+
+    "</div>"
     );
   }])
 
   .run(['$templateCache', function($templateCache) {
     $templateCache.put("radio",
-      "<div class=\"form-group\">" +
-      "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"radio-inline\" ng-repeat=\"value in formVars.values\">" + 
-      "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"radio\" ng-model=\"formVars.model\" value=\"{{ value }}\"> {{ value }}" +
-      "</label>" +
+      "<div class=\"col-md-12\">" +
+        "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"radio-inline\" ng-repeat=\"value in form.values\">" + 
+        "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"radio\" ng-model=\"formValues.values[form.model]\" value=\"{{ value }}\"> {{ value }}" +
+        "</label>" +
       "</div>"
       );
   }])
 
   .run(['$templateCache', function($templateCache) {
     $templateCache.put("checkbox",
-      "<div class=\"form-group\">" +
-      "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"checkbox-inline\" ng-repeat=\"value in formVars.values\">" +
-      "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"checkbox\" checklist-model=\"formVars.model\" checklist-value=\"value\"> {{ value }}" +
-      "</label>" +
+      "<div class=\"col-md-12\">" +
+        "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"checkbox-inline\" ng-repeat=\"value in form.values\">" +
+        "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"checkbox\" checklist-model=\"formValues.values[form.model]\" checklist-value=\"value\"> {{ value }}" +
+        "</label>" +
       "</div>"
       );
   }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("text",
+      "<div class=\"col-md-12\" >" +
+        "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"text\" ng-model=\"formValues.values[form.model]\" checklist-value=\"value\"> {{ value }}" +
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("textarea",
+      "<div class=\"col-md-12\" >" +
+        "<textarea name=\"{{ id }}\" id=\"{{ id }}\" style=\"width: 100%\" rows=\"10\" ng-model=\"formValues.values[form.model]\"></textarea>" +
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("thickness-number",
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].number\" ng-options=\"a for a in [1,2,3,4,5,6,7,8,9,10]\">" +
+          "<option value=\"\">--Number--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].thickness\" ng-options=\"a for a in [.25, .5, .75, 1, 1.25, 1.5, 1.75, 2]\">" +
+          "<option value=\"\">--Thickness--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<label class=\"checkbox-inline\"><input type=\"checkbox\" ng-model=\"formValues.values[form.model].boneIn\"value=\"Bone In\"> Bone In</label>" +
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("checkbox-custom",
+      "<div class=\"col-md-12\">" +
+        "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"checkbox-inline\" ng-repeat=\"value in form.values\">" +
+        "<input name=\"{{ id }}\" id=\"{{ id }}\" type=\"checkbox\" checklist-model=\"formValues.values[form.model]\" checklist-value=\"value\"> {{ value }}" +
+      "</label>" +
+        "<input type=\"checkbox\" ng-init=\"custom = 1\" checklist-model=\"formValues.values[form.model]\" checklist-value=\"custom\"><input type=\"text\" ng-model=\"custom\">"+
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("amount-number",
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model]\" ng-options=\"a for a in [1,2,3,4,5,6,7,8,9,10]\">" +
+          "<option value=\"\">--Amount--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model]\" ng-options=\"a for a in [1,2,3,4,5,6,7,8,9,10]\">" +
+          "<option value=\"\">--Number--</option>" +
+        "</select>" +
+      "</div>"
+      );
+  }])
+
 
   // .run(['$templateCache', function($templateCache) {
   //   $templateCache.put("number",

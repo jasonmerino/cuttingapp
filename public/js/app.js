@@ -6,6 +6,7 @@ angular.module('myApp', [
   'ngUsStates',
   'checklist-model',
   'ui.bootstrap',
+  'confirmClick',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
@@ -69,15 +70,15 @@ angular.module('myApp', [
 	})
 	
 	.state('new_cuttinginstructions', {
-		url: '/cutting_instructions/new/:id',
+		url: '/cutting_instructions/new/:forms_id',
 		data: {
 			name: 'New Cutting Instructions',
 			slug: 'cutting-new'
 		},
 		views: {
 			'': {
-				templateUrl: 'partials/cutting.new.html',
-				controller: 'newCuttingInstructionsCtrl'
+				templateUrl: 'pages/new.instructions.html',
+				controller: 'newInstructionsCtrl'
 			}
 		}
 	})

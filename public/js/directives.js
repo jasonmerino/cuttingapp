@@ -14,22 +14,20 @@ angular.module('myApp.directives', [])
   .directive('formTemplate', ['$http', '$templateCache', '$compile', function($http, $templateCache, $compile) {
 
     var linker = function (scope, element, attrs) {
-      if(!scope.formVars.templateUrl == '') {
-        if(scope.formVars) {
-          var tplUrl = scope.formVars.templateUrl;
-          $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
-             element.replaceWith($compile(tplContent.trim())(scope));
-          });
-        }
+      var formVars = scope.form;                                                                                                                                                                                                                          
+      if(!formVars.templateUrl == '') {
+        var tplUrl = formVars.templateUrl;
+        $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
+           element.replaceWith($compile(tplContent)(scope));
+        });
       }
     }
 
     return {
       restrict: 'E',
       replace: true,
-      scope: {
-        formVars: "="
-      },
+      transclude: true,
+      scope: false,
       link: linker
     };
   }])
@@ -74,5 +72,19 @@ angular.module('myApp.directives', [])
       link: linker
     }
   })
+
+  .directive('ngReallyClick', [function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.bind('click', function() {
+                var message = attrs.ngReallyMessage;
+                if (message && confirm(message)) {
+                    scope.$apply(attrs.ngReallyClick);
+                }
+            });
+        }
+    }
+  }])
 
   ;

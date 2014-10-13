@@ -1,3 +1,18 @@
+.inset-button {
+	position: relative;
+	
+	> input {
+		padding-right: 75px;
+	}
+	> button, .button {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+
+
 // .section {
 // 	margin: $pad*2 0;
 // }

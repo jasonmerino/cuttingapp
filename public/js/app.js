@@ -56,7 +56,7 @@ angular.module('myApp', [
 	})
 
 	.state('instructions', {
-		url: '/instructions/:inst_id',
+		url: '/instructions',
 		data: {
 			name: 'Cutting Instructions',
 			slug: 'instructions'
@@ -65,6 +65,20 @@ angular.module('myApp', [
 			'': {
 				templateUrl: 'pages/instructions.html',
 				controller: 'instructionsCtrl'
+			}
+		}
+	})
+
+	.state('instruction', {
+		url: '/instruction/:inst_id',
+		data: {
+			name: 'Cutting Instruction',
+			slug: 'instruction'
+		},
+		views: {
+			'': {
+				templateUrl: 'pages/instruction.html',
+				controller: 'instructionCtrl'
 			}
 		}
 	})

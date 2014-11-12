@@ -1,68 +1,69 @@
 {
-  "products": [{
+  "meatOnly": [
+  {
     "name"    : "Regular",
     "category": "Salami",
-    "price"   : 4.29
+    "price"   : 5.29
   },
   {
-    "name"    : "Jalepeno",
+    "name"    : "Jalapeno",
     "category": "Salami",
-    "price"   : 4.29
+    "price"   : 5.29
   },
   {
-    "name"    : "Cheddar",
-    "category": "Salami",
-    "price"   : 4.29
+    "name"    : "Teriyaki",
+    "category": "Snack Stix",
+    "price"   : 11.99
   },
   {
     "name"    : "Peppered",
     "category": "Snack Stix",
-    "price"   : 9.99
-  },
-  {
-    "name"    : "Teriaky",
-    "category": "Snack Stix",
-    "price"   : 9.99
-  },
-  {
-    "name"    : "Mild Cheddar",
-    "category": "Snack Stix",
-    "price"   : 9.99
+    "price"   : 11.99
   },
   {
     "name"    : "Hot Cheddar",
     "category": "Snack Stix",
-    "price"   : 9.99
+    "price"   : 11.99
+  },
+  {
+    "name"    : "Mild Cheddar",
+    "category": "Snack Stix",
+    "price"   : 11.99
   },
   {
     "name"    : "North Country",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
   },
   {
     "name"    : "German",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
   },
   {
     "name"    : "Venison &amp; Swiss",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
   },
   {
     "name"    : "Campire Country",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
   },
   {
     "name"    : "Jalapeno Cheddar",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
   },
   {
     "name"    : "Hawaiian Jalapeno",
     "category": "Sausage",
-    "price"   : 4.99
+    "price"   : 6.49
+  },
+  {
+    "name"    : "Hawaiian Jalapeno",
+    "category": "Sausage",
+    "price"   : 6.49
   },
   {
     "name"    : "Country",
@@ -70,11 +71,21 @@
     "price"   : 6.99
   },{
 
-    "name"    : "Cajun Country",
+    "name"    : "Hot Italian",
     "category": "Breakfast Links",
     "price"   : 6.99
   },{
-    "name"    : "Apple",
+    "name"    : "Mild Italian",
+    "category": "Breakfast Links",
+    "price"   : 6.99
+  },
+  {
+    "name"    : "Chorizo",
+    "category": "Breakfast Links",
+    "price"   : 6.99
+  },{
+
+    "name"    : "Cajun Country",
     "category": "Breakfast Links",
     "price"   : 6.99
   }

@@ -8,7 +8,7 @@
 		    <button class="btn btn-primary"ng-click="filter = ''">Clear</button>
 	  	</div>
 	  	<div class="col-md-6">
-	  		<button class="btn btn-primary pull-right" ng-click="launchModal()">+ Add New</button>
+	  		<!-- <button class="btn btn-primary pull-right" ng-click="launchModal()">+ Add New</button> -->
 	  	</div>
   	</div>
 	</form>
@@ -21,16 +21,18 @@
 				<th>Owner</th>
 				<th>Price</th>
 				<th>Weight</th>
+				<th>Details</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="instruction in instructions | orderBy: 'animal' | filter:filter:strict " ng-click="">
-				<td><a class="ion-close" ng-really-message="Are you sure"? ng-really-click="deleteInstruction(instruction._id)"></a></td>
+				<td><a class="ion-close" ng-really-message="Are you sure?" ng-really-click="deleteInstruction(instruction._id)"></a></td>
 				<td>{{ instruction.created }}</td>
 				<td>{{ instruction.animal }}</td>
-				<td ng-bind="customerName(instruction._id)"></td>
-				<td>{{ instruction.price }}</td>
-				<td>{{ instruction.weight }}</td>
+				<td ng-bind="customerName(instruction.customer_id)"></td>
+				<td>{{ instruction.price | currency }}</td>
+				<td>{{ instruction.weight }} lbs</td>
+				<td><a ui-sref="instruction({inst_id: instruction._id})">Details</a></td>
 			</tr>
 		</tbody>
 	</table>

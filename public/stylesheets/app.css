@@ -155,6 +155,12 @@ h2 {
     top: 0;
     right: 0; }
 
+.section {
+  margin-bottom: 30px; }
+
+.product {
+  margin-bottom: 10px; }
+
 table {
   width: 100%; }
   table thead > tr {

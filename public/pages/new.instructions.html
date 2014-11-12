@@ -54,31 +54,29 @@
 						<dd>{{ totalCost() | currency }}</dd>
 					</div>
 				</dl>
-				<dl class="dl-horizontal">
-					<div class="row" ng-repeat="product in products">
-						<div class="col-md-4">
+				<h4>Products</h4>
+				<ul class="dl-horizontal list-unstyled">
+					<li class="row product" ng-repeat="product in products">
+						<div class="col-md-5">
 							<select 
 								class="form-control" 
 								ng-model="product_price" 
-								ng-options="(product.category +' '+ product.name) group by product.category for product in product.products">
+								ng-options="(product.category +' - '+ product.name) group by product.category for product in product.products">
 								<option value="">--Select Product--</option>
-								<!-- <option value="1.0">Sausage</option>
-								<option value="1.5">Salami</option>
-								<option value="1.4">Snack Stix</option> -->
 							</select>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<input type="text" class="form-control" ng-model="product_amount" placeholder="lbs" />
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<span ng-bind="productCost(product_price, product_amount, $index)"></span>
 						</div>
-						<div class="col-md-1">
-							<button ng-click="removeProduct($index)">-</button>
+						<div class="col-md-2">
+							<button class="btn btn-default" ng-click="removeProduct($index)"><i class="ion-close"></i></button>
 						</div>
-					</div>
-					<button class="btn btn-primary" ng-click="addProduct()">Add Product</button>
-				</dl>
+					</li>
+				</ul>
+				<button class="btn btn-primary" ng-click="addProduct()">Add Product</button>
 			</div>
 		</div>
 		<button ng-click="submit()" class="btn btn-primary">Submit</button>

@@ -9,6 +9,7 @@ var InstructionSchema   = new Schema({
 	created:      	String,
 	completed:    	Boolean,
 	forms: 					Array,
+	products:       Array,
 });
 
 module.exports = mongoose.model('Instruction', InstructionSchema);

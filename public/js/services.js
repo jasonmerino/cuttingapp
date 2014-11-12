@@ -97,7 +97,7 @@ angular.module('myApp.services', [])
       },
       'bear': {
         name: "Bear",
-        form: "wildgame.json"
+        form: "bear.json"
       },
       'sheep': {
       	name: "Sheep",

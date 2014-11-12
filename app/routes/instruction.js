@@ -16,6 +16,7 @@ router.route('/instructions')
 		instruction.created				=		req.body.created;
 		instruction.completed			=		req.body.completed;
 		instruction.forms					= 	req.body.forms;
+		instruction.products 			=   req.body.products;
 
 		instruction.save(function (err){
 			if (err)

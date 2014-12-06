@@ -1,0 +1,49 @@
+<div class="modal-trim">
+	<header class="header">
+		<h3>Calculate Trim</h3>
+		<!-- <i class="float-right ion-close-round button" ng-click="remove()"></i> -->
+	</header>
+	<form role="form">
+		<div class="row">
+			<div class="col-md-12">
+				<table>
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Enter Value</th>
+							<th>Trim Required</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>Snack Stix</td>
+						<td><input class="form-control" type="text" ng-model="trim.snackStix"></td>
+						<td>{{ trim.snackStix * 1.66 | number }}</td>
+					</tr>
+					<tr>
+						<td>Sausages</td>
+						<td><input class="form-control" type="text" ng-model="trim.sausage"></td>
+						<td>{{ trim.sausage/2 | number }}</td>
+					</tr>
+					<tr>
+						<td>Salami</td>
+						<td><input class="form-control" type="text" ng-model="trim.salami"></td>
+						<td>{{ trim.salami/1.4 | number }}</td>
+					</tr>
+					<tr>
+						<td>Jerky</td>
+						<td><input class="form-control" type="text" ng-model="trim.jerky"></td>
+						<td>{{ trim.jerky * 12.50 | number }}</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td style="text-align: right;">Total:</td>
+						<td>{{ trim.snackStix * 1.66 + trim.sausage/2 + trim.salami/1.4 + trim.jerky * 12.50 | number }}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+	<footer>
+		<button class="btn btn-warning" ng-click="cancel()">Close</button>
+	</footer>
+</div>

@@ -19,10 +19,23 @@ angular.module('myApp', [
 .config(function($stateProvider, $urlRouterProvider) {
 	
 	$stateProvider
-	
+
+	.state('login', {
+		url: '/',
+		views: {
+			'': {
+				templateUrl: 'pages/login.html',
+				controller: 'login',
+			}
+		},	
+		data: {
+			name: 'Login',
+			slug: 'login'
+		}
+	})
 		// route to show our basic form (/form)
 	.state('home', {
-		url: '/',
+		url: '/home',
 		views: {
 			'': {
 				templateUrl: 'pages/home.html',
@@ -97,7 +110,16 @@ angular.module('myApp', [
 		}
 	})
 	$urlRouterProvider.otherwise('/');
-});
+})
+	.run(function($rootScope, $http){
+    $rootScope.message = '';
+
+    // Logout function is available in any pages
+    $rootScope.logout = function(){
+      $rootScope.message = 'Logged out.';
+      $http.post('api/logout');
+    };
+  });
 
 // our controller for the form
 // =============================================================================

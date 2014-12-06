@@ -19,21 +19,23 @@ angular.module('myApp.controllers')
 
     $scope.customerName = function(id) {
       console.log(id);
-      if($scope.customers.length != 0) {
+      console.log($scope.customers);
+      if($scope.customers.length > 0) {
         for(var i=0; i<$scope.customers.length; i++) {
-          if($scope.customers[i]._id = id) {
+          if($scope.customers[i]._id == id) {
             return $scope.customers[i].first_name + ' ' + $scope.customers[i].last_name;
+            console.log($scope.customers[i].first_name);
           }    
         }
       }
     } 
 
     // $scope.customerName = function(id) {
-    //   customersService.get($stateParams.cust_id)
+    //   customersService.get(id)
     //     .success(function(data){
-    //       return data.first;
+    //       return data.first_name;
     //     });
-    // }
+    //   }
 
     $scope.deleteInstruction = function(id) {
     instructionsService.delete(id)

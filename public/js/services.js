@@ -140,4 +140,11 @@ angular.module('myApp.services', [])
 			}
 		}
 	})
+  .factory('loginService', function($http){
+    return {
+      login : function(creds) {
+        return $http.post('/api/login', creds);
+      }
+    }
+  })
   ;

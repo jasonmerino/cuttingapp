@@ -347,6 +347,9 @@ label {
 .instructions-modal {
   padding: 15px; }
 
+.modal-trim {
+  padding: 1rem; }
+
 .module {
   position: relative; }
   .module .module-footer {

@@ -2,7 +2,8 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers').controller('home', function($scope, $stateParams, $state, $rootScope) {
+angular.module('myApp.controllers').controller('home', function($scope, $stateParams, $state, $rootScope, loginService) {
+
     $scope.pageName = $state.current.data.name;
     $rootScope.active = $state.current.data.name;
     $scope.entered = [];
@@ -20,4 +21,5 @@ angular.module('myApp.controllers').controller('home', function($scope, $statePa
     $scope.result = function() {
       return "success";
     }
+
   });

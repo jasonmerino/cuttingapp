@@ -58,7 +58,7 @@ angular.module("myApp.templates", []).
         "</select>" +
       "</div>" +
       "<div class=\"col-md-4\">" +
-        "<label class=\"checkbox-inline\"><input type=\"checkbox\" ng-model=\"formValues.values[form.model].boneIn\"value=\"Bone In\"> Bone In</label>" +
+        "<label class=\"checkbox-inline\"><input type=\"checkbox\" ng-model=\"formValues.values[form.model].boneIn\" ng-true-value=\"Yes\" ng-false-value=\"No\"> Bone In</label>" +
       "</div>"
       );
   }])

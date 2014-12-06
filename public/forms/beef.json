@@ -20,7 +20,7 @@
 		},{
 			"name": "Steaks",
 			"templateUrl": "thickness-number",
-			"model": "s"
+			"model": "steaks"
 		},{
 			"name": "Roasts",
 			"templateUrl": "radio",
@@ -38,7 +38,7 @@
 			"values": [
 				"Steaks",
 				"Roasts",
-				"Grint"							
+				"Grind"							
 			]
 		},{
 			"name": "Chuck",

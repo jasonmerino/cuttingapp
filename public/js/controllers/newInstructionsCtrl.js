@@ -66,6 +66,15 @@ angular.module('myApp.controllers')
       });
     }
 
+    $scope.launchTrimModal = function(){
+      var newModal = $modal.open({
+        templateUrl: "partials/modal.trim.html",
+        controller: "newCustomerCtrl",
+        size: 'lg',
+        scope: $scope
+      });
+    }
+
     $scope.removeProduct = function(index) {
       if (index > -1) {
         $scope.product_selection.splice(index, 1);
@@ -139,6 +148,13 @@ angular.module('myApp.controllers')
           value = array[i] + ", " + value;
         }
         
+      } else if ($scope.formValues.values[key] instanceof Object){
+
+        angular.forEach($scope.formValues.values[key], function(objectValue, index){
+          if(objectValue != null) {
+            value = $filter('camelCaseToHuman')(index) + ": " + objectValue + " \n " + value;
+          }
+        })
       } else {
         value = $scope.formValues.values[key];
       }

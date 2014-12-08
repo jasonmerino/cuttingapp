@@ -1,4 +1,4 @@
-<h2>New {{ animal_name }} Cutting Instructions <button class="btn btn-primary pull-right" ng-click="launchTrimModal()">Calculate Trim</button></h2>
+<h2>{{ animal_name }}<button class="btn btn-primary pull-right" ng-click="launchTrimModal()">Calculate Trim</button></h2>
 
 <div class="block">
 	<form name="cuttingInstructions" class="form-horizontal" role="form">
@@ -12,7 +12,7 @@
 					<div class="col-md-9">
 						<label>Select Customer</label>
 						<select ng-model="customer_id" class="form-control" ng-options="option._id as (option.first_name + ' ' + option.last_name) for option in customers | orderBy: 'last_name'">
-							<option value="">-- Select Customer --</option>
+							<option value="" >-- Select Customer --</option>
 						</select>
 					</div>
 					<div class="col-md-3">

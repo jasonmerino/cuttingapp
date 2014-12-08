@@ -14,8 +14,11 @@ label {
   display: table;
   clear: both; }
 
-.menu-inline > li {
+.menu-inline {
+  display: inline-block;
   float: left; }
+  .menu-inline > li {
+    float: left; }
 
 hr {
   margin: 0;

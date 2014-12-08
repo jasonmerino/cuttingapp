@@ -1,22 +1,24 @@
 var express 			= require('express');
-var User 					= require('../models/login');
 var router 				= express.Router();
-var passport      = require('passport');
+var User          = require('../models/login');
+
+var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+router.route('/loggedin')
+	.get(function(req, res){
+    res.send(req.isAuthenticated() ? req.user : '0');
+  });
+
 router.route('/login')
-	.post(function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) { return next(err) }
-    if (!user) {
-      req.flash('error', info.message);
-      console.log("no user");
-    }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      console.log("what?");
-    });
-  })(req, res, next);
-});
+  .post(passport.authenticate('local'), function(req, res) {
+    res.send(req.user);
+  });
+
+router.route('/logout')
+  .post(function(req, res) {
+    req.logOut();
+    res.send(200);
+  });
 
 module.exports = router;

@@ -1,5 +1,7 @@
 .menu-inline {
 	@extend %clearfix;
+	display: inline-block;
+	float: left;
 	> li {
 		float: left;
 	}

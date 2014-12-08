@@ -27,7 +27,6 @@ angular.module('myApp.controllers')
               if($scope.customers.length != 0) {
                 for(var i=0; i<data.length; i++) {
                   if($scope.customers[i]._id = $scope.cust_id) {
-                    console.log("success");
                     $scope.name = $scope.customers[i].first_name + ' ' + $scope.customers[i].last_name;
                   }    
                 }
@@ -50,6 +49,15 @@ angular.module('myApp.controllers')
         value = $scope.instructions[key];
       }
       return value;
+    }
+
+    $scope.print = function(divName) {
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;        
+      var popupWin = window.open('', '_blank', 'width=600,height=300');
+      popupWin.document.open()
+      popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="stylesheets/print.css" /></head><body onload="window.print()" class="print">' + printContents + '</html>');
+      popupWin.document.close();
     }
 
 

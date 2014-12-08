@@ -5,13 +5,12 @@
 angular.module('myApp.controllers')
 
   .controller('newInstructionsCtrl', function($http, $scope, $stateParams, $modal, $filter, instructionsService, customersService, todaysDate, animals, formsService){
-    
     // Scope Objects
 
     $scope.formValues = {};
     $scope.animals = animals;
     $scope.customers = {};
-    $scope.animal_name = animals[$stateParams.forms_id].name;
+    $scope.animal_name = '';
     $scope.productsTotal = 0;
     $scope.products = {};
     $scope.instructions = {};
@@ -25,32 +24,41 @@ angular.module('myApp.controllers')
         $scope.customers = data;
     });
 
-    
-    // Get forms for animal passes in 
+    if(animals[$stateParams.forms_id]) {
 
-    var form = animals[$stateParams.forms_id].form;
+      $scope.animal_name = 'New ' + animals[$stateParams.forms_id].name + ' Cutting Instructions';
+      var form = animals[$stateParams.forms_id].form;
 
-    formsService.get(form)
+      formsService.get(form)
       .success(function(data){
         var formVars = angular.copy(data);
         $scope.forms = formVars.forms;
         $scope.animal_type = name;
         $scope.formValues.pricePerPound   = formVars.pricePerPound;
         $scope.formValues.minPrice        = formVars.minPrice;
-    });
-
-    // Load Products JSON
-
-    formsService.get('products.json')
-      .success(function(data){
-        var product = data;
-        $scope.products = [angular.copy(product)];
-
-        $scope.addProduct = function() {  
-          var output = angular.copy(product);
-          $scope.products.push(output);
-        }
       });
+
+      // Load Products JSON
+
+      formsService.get('products.json')
+        .success(function(data){
+          var product = data;
+          $scope.products = [angular.copy(product)];
+
+          $scope.addProduct = function() {  
+            var output = angular.copy(product);
+            $scope.products.push(output);
+          }
+        });
+
+    } else {
+      $scope.animal_name = "Please Select Animal"
+    }
+
+    
+    // Get forms for animal passes in 
+
+    
 
 
     // New customer modal

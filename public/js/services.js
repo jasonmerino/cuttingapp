@@ -142,9 +142,27 @@ angular.module('myApp.services', [])
 	})
   .factory('loginService', function($http){
     return {
-      login : function(creds) {
-        return $http.post('/api/login', creds);
+      login   : function(creds) {
+        return $http.post('api/login', { username: creds.username, password: creds.password })
       }
     }
   })
   ;
+
+
+  // $scope.login = function(){
+  //     $http.post('api/login', {
+  //       username: $scope.user.username,
+  //       password: $scope.user.password,
+  //     })
+  //     .success(function(user){
+  //       // No error: authentication OK
+  //       console.log('Authentication successful!')
+  //       $location.url('home');
+  //     })
+  //     .error(function(){
+  //       // Error: authentication failed
+  //       console.log('Authentication failed.');
+  //       $location.url('api/login');
+  //     });
+  //   };

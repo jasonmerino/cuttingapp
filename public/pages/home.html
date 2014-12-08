@@ -1,3 +1,19 @@
 <!-- Cutting Instructions Form -->
 <h2 class="heading-hero">Welcome to Wagon Wheel Cutting Instructions</h2>
 <!-- <div ui-view></div> -->
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<h3>Recent Instructions</h3>
+		<div class="block">
+			<table>
+				<tr ng-repeat="instruction in instructions | orderBy: 'animal' | limitTo : 5 ">
+					<td>{{ instruction.created }}</td>
+					<td>{{ instruction.animal }}</td>
+					<td ng-bind="customerName(instruction.customer_id)"></td>
+					<td><a ui-sref="instruction({inst_id: instruction._id})"><i class="icon ion-link"></i></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

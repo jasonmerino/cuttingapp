@@ -1,0 +1,26 @@
+@import "extends";
+
+div {
+	@extend %clearfix;
+}
+
+dt {
+	width: 300px;
+	text-align: right;
+	float: left;
+}
+
+dd {
+	margin-left: 320px;
+}
+
+.products {
+	dd:after {
+		content: "";
+		display: block;
+		width: 10px;
+		height: 10px;
+		border: solid thin gray;
+		float: right;
+	}
+}

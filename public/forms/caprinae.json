@@ -1,0 +1,60 @@
+{
+	"pricePerPound": 1.45,
+	"minPrice": 145,
+	"customer_id": "",
+  "animal": "",
+  "weight": "",
+  "price": "",
+  "created": "",
+  "completed": "",
+	"forms": [{
+		"name": "Chops",
+		"templateUrl": "thickness-number",
+		"model": "chops"
+		},{
+			"name": "Steaks",
+			"templateUrl": "thickness-number",
+			"model": "steaks"
+		},{
+			"name": "Legs",
+			"templateUrl": "radio",
+			"model": "legs",
+			"values": [
+				"Whole",
+				"Cut in half",
+				"Cut into steaks"
+			]
+		},{
+			"name": "Ribs",
+			"templateUrl": "radio",
+			"model": "ribs",
+			"values": [
+				"Yes",
+				"No"
+			]
+		},{
+			"name": "Ribblets",
+			"templateUrl": "radio",
+			"model": "ribblets",
+			"values": [
+				"Yes",
+				"No"
+			]
+		},{
+			"name": "Shanks",
+			"templateUrl": "radio",
+			"model": "shanks",
+			"values": [
+				"Yes",
+				"No"
+			]
+		},{
+			"name": "Stew",
+			"templateUrl": "radio",
+			"model": "stew",
+			"values": [
+				"Yes",
+				"No"
+			]
+		}]
+	}

@@ -1,8 +1,10 @@
 <h2 page-name></h2>
-	<ul class="unstyled">
-		<div class="col-1-2">
-			<div id="print" class="module block">
-				<table>
+<div id="print">
+	<div class="row">
+		<div class="col-md-4">
+			<section>
+				<h4>Details</h4>
+				<table class="module block">
 					<tr>
 						<td></td>
 						<td>Animal</td>
@@ -23,18 +25,48 @@
 						<td>Total Cost</td>
 						<td>{{ price | currency }}</td>
 					</tr>
-					<tr ng-repeat="product in products" class="products">
-						<td><input type="checkbox"></td>
-						<td>{{ product.category }} - {{ product.name }}</td>
-						<td>{{ product.amount }}lbs</td>
-					</tr>
+				</table>
+			</section>
+		</div>
+		<div class="col-md-8">
+				<h4>Instructions</h4>
+				<table class="module block">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Product</th>
+							<th>Instruction</th>
+						</tr>
+					</thead>
 					<tr ng-repeat="(key, value) in instructions | orderBy: key ">
-						<td><input type="checkbox"></td>
+						<td align="center"><input type="checkbox"></td>
 						<td>{{ key | camelCaseToHuman }}</td>
 						<td ng-bind="returnValue(key)"></td>
 					</tr>
 				</table>
-			</div>
+			</section>
 		</div>
-	</ul>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<section>
+				<h4 ng-show="products">Products</h4>
+				<table class="module block" ng-show="products">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Category</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tr ng-repeat="product in products" class="products">
+						<td align="center"><input type="checkbox"></td>
+						<td>{{ product.category }} - {{ product.name }}</td>
+						<td>{{ product.amount }}lbs</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>
 	<button class="btn btn-primary" ng-click="print('print')">Print</button>

@@ -6,11 +6,14 @@ angular.module('myApp.controllers')
     
   .controller('instructionCtrl', function($scope, $http, $stateParams, $templateCache, $compile, $modal, customersService, instructionsService){
     $scope.instructions;
+    $scope.instruction_id = $stateParams.inst_id;
 
     instructionsService.get($stateParams.inst_id)
       .success(function(data){
         console.log(data);
         $scope.instructions = data.forms[0].values;
+        $scope.portion  = data.portion;
+        $scope.split    = data.split;
         $scope.animal   = data.animal;
         $scope.created  = data.created;
         $scope.price    = data.price;

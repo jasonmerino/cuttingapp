@@ -56,5 +56,9 @@
 				"Yes",
 				"No"
 			]
-		}]
+		},{
+			"name": "Notes",
+			"templateUrl": "textarea",
+			"model": "notes"
+			}]
 	}

@@ -171,5 +171,23 @@ angular.module('myApp', [
       loggedin: checkLoggedin
     }
 	})
+
+	.state('editCusttingInstruction', {
+		url: '/edit/:inst_id',
+		data: {
+			name: 'Edit Cutting Instruction',
+			slug: 'cutting-edit'
+		},
+		views: {
+			'': {
+				templateUrl: 'pages/new.instructions.html',
+				controller: 'editInstructionsCtrl'
+			}
+		},
+		resolve: {
+      loggedin: checkLoggedin
+    }
+	})
+
 	$urlRouterProvider.otherwise('/');
 });

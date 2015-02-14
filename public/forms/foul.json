@@ -21,5 +21,9 @@
 		"values": [
 			"4.29"
 		]
-	}]
+	},{
+		"name": "Notes",
+		"templateUrl": "textarea",
+		"model": "notes"
+		}]
 }

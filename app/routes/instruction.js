@@ -10,6 +10,8 @@ router.route('/instructions')
 		console.log(req.body.forms);
 
 		instruction.customer_id 	= 	req.body.customer_id;
+		instruction.portion 			=		req.body.portion;
+		instruction.split 				=   req.body.split;
 		instruction.animal 				=		req.body.animal;
 		instruction.weight				=		req.body.weight;
 		instruction.price					= 	req.body.price;

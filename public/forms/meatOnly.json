@@ -1,6 +1,5 @@
 {
-  "meatOnly": [
-  {
+  "meatOnly": [{
     "name"    : "Regular",
     "category": "Salami",
     "price"   : 5.29

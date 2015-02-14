@@ -4,7 +4,7 @@
 
 angular.module('myApp.controllers')
 
-  .controller('newInstructionsCtrl', function($http, $scope, $stateParams, $modal, $filter, instructionsService, customersService, todaysDate, animals, formsService){
+  .controller('newInstructionsCtrl', function($http, $scope, $stateParams, $modal, $filter, instructionsService, customersService, todaysDate, animals, formsService, portionService, splitService){
     // Scope Objects
 
     $scope.formValues = {};
@@ -16,34 +16,8 @@ angular.module('myApp.controllers')
     $scope.instructions = {};
     $scope.totalPrice = null;
     $scope.product_selection = [];
-    $scope.portions = [
-      '1/4',
-      '1/3',
-      '1/2',
-      '2/3',
-      '3/4',
-      '1',
-      '1 1/4',
-      '1 1/3',
-      '1 1/2',
-      '1 2/3',
-      '1 3/4',
-      '2',
-      '2 1/4',
-      '2 1/3',
-      '2 1/2',
-      '2 2/3',
-      '2 3/4',
-      '3'
-    ];
-    $scope.splits = [
-      '1/4',
-      '1/3',
-      '1/2',
-      '2/3',
-      '3/4',
-      '1',
-    ]
+    $scope.portions = portionService;
+    $scope.splits = splitService;
 
     // Get Customers
 
@@ -55,20 +29,23 @@ angular.module('myApp.controllers')
     if(animals[$stateParams.forms_id]) {
 
       $scope.animal_name = 'New ' + animals[$stateParams.forms_id].name + ' Cutting Instructions';
-      var form = animals[$stateParams.forms_id].form;
+      $scope.animal = animals[$stateParams.forms_id].name;
 
+      var form = animals[$stateParams.forms_id].form;
       formsService.get(form)
-      .success(function(data){
-        var formVars = angular.copy(data);
-        $scope.forms = formVars.forms;
-        $scope.animal_type = name;
-        $scope.formValues.pricePerPound   = formVars.pricePerPound;
-        $scope.formValues.minPrice        = formVars.minPrice;
-      });
+        .success(function(data){
+          var formVars = angular.copy(data);
+          $scope.forms = formVars.forms;
+          $scope.animal_type = name;
+          $scope.formValues.pricePerPound   = formVars.pricePerPound;
+          $scope.formValues.minPrice        = formVars.minPrice;
+        });
 
       // Load Products JSON
 
-      formsService.get('products.json')
+      $scope.product_type = 'products.json';
+
+      formsService.get($scope.product_type)
         .success(function(data){
           var product = data;
           $scope.products = [angular.copy(product)];
@@ -181,7 +158,7 @@ angular.module('myApp.controllers')
 
         var array = $scope.formValues.values[key].sort();
         for(var i=0; i<array.length; i++) {
-          value = array[i] + ", " + value;
+          value = array[i] + ' ' + value;
         }
 
       } else if ($scope.formValues.values[key] instanceof Object){
@@ -200,9 +177,12 @@ angular.module('myApp.controllers')
     $scope.submit = function() {
 
       console.log($scope.new_product);
+      console.log($scope.portion);
 
       $scope.instructions.customer_id = $scope.customer_id;
-      $scope.instructions.animal      = $scope.animal_name;
+      $scope.instructions.portion     = $scope.portion;
+      $scope.instructions.split       = $scope.split;
+      $scope.instructions.animal      = $scope.animal;
       $scope.instructions.weight      = $scope.formValues.weight;
       $scope.instructions.price       = $scope.totalPrice;
       $scope.instructions.created     = todaysDate;

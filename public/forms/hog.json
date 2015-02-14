@@ -78,5 +78,9 @@
 				"Medium",
 				"Thin"
 			]
-		}]
+		},{
+			"name": "Notes",
+			"templateUrl": "textarea",
+			"model": "notes"
+			}]
 	}

@@ -164,6 +164,9 @@ h2 {
 .product {
   margin-bottom: 10px; }
 
+table.block {
+  padding: 0; }
+
 table {
   width: 100%; }
   table thead > tr {

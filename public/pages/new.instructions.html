@@ -4,18 +4,12 @@
 	<form name="cuttingInstructions" class="form-horizontal" role="form">
 		<div class="form-group">
 			<div class="col-md-6">
-				<label for="">Split Fee</label>
-				<select class="form-control">
-					<option value=""></option>
-					<option>.25</option>
-					<option>.3</option>
-					<option>.5</option>
-					<option>.6</option>
-					<option>.75</option>
-					<option>1.25</option>
-					<option>1.5</option>
-					<option>1.75</option>
-					<option>2</option>
+				<label for="">Portion</label>
+				<input class="form-control" type="text" ng-model="portion">
+			</div>
+			<div class="col-md-6">
+				<label for="">Split in to...</label>
+				<select class="form-control" ng-model="split" ng-options="split for split in splits">
 				</select>
 			</div>
 		</div>
@@ -44,7 +38,7 @@
 			<div class="col-md-6">
 				<div  ng-repeat="form in forms" class="section">
 					<h4 class="form-label">{{ form.name }}</h4>
-					<div class="form-group">	
+					<div class="form-group">
 						<form-template></form-template>
 					</div>
 				</div>
@@ -72,9 +66,9 @@
 				<ul class="dl-horizontal list-unstyled">
 					<li class="row product" ng-repeat="product in products">
 						<div class="col-md-5">
-							<select 
-								class="form-control" 
-								ng-model="product_price" 
+							<select
+								class="form-control"
+								ng-model="product_price"
 								ng-options="(product.category +' - '+ product.name) group by product.category for product in product.products">
 								<option value="">--Select Product--</option>
 							</select>

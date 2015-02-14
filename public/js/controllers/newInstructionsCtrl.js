@@ -16,6 +16,34 @@ angular.module('myApp.controllers')
     $scope.instructions = {};
     $scope.totalPrice = null;
     $scope.product_selection = [];
+    $scope.portions = [
+      '1/4',
+      '1/3',
+      '1/2',
+      '2/3',
+      '3/4',
+      '1',
+      '1 1/4',
+      '1 1/3',
+      '1 1/2',
+      '1 2/3',
+      '1 3/4',
+      '2',
+      '2 1/4',
+      '2 1/3',
+      '2 1/2',
+      '2 2/3',
+      '2 3/4',
+      '3'
+    ];
+    $scope.splits = [
+      '1/4',
+      '1/3',
+      '1/2',
+      '2/3',
+      '3/4',
+      '1',
+    ]
 
     // Get Customers
 
@@ -45,7 +73,7 @@ angular.module('myApp.controllers')
           var product = data;
           $scope.products = [angular.copy(product)];
 
-          $scope.addProduct = function() {  
+          $scope.addProduct = function() {
             var output = angular.copy(product);
             $scope.products.push(output);
           }
@@ -55,10 +83,10 @@ angular.module('myApp.controllers')
       $scope.animal_name = "Please Select Animal"
     }
 
-    
-    // Get forms for animal passes in 
 
-    
+    // Get forms for animal passes in
+
+
 
 
     // New customer modal
@@ -122,7 +150,7 @@ angular.module('myApp.controllers')
     $scope.totalProductCost = function() {
       var total = 0;
       for(var i=0; i<$scope.products.length; i++) {
-        if($scope.products[i].total > 0) { 
+        if($scope.products[i].total > 0) {
           total = total + $scope.products[i].total;
         }
       }
@@ -150,12 +178,12 @@ angular.module('myApp.controllers')
       var value = "";
 
       if($scope.formValues.values[key] instanceof Array) {
-        
+
         var array = $scope.formValues.values[key].sort();
         for(var i=0; i<array.length; i++) {
           value = array[i] + ", " + value;
         }
-        
+
       } else if ($scope.formValues.values[key] instanceof Object){
 
         angular.forEach($scope.formValues.values[key], function(objectValue, index){

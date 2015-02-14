@@ -69,11 +69,11 @@ angular.module('myApp.services', [])
 
       if(dd<10) {
           dd='0'+dd
-      } 
+      }
 
       if(mm<10) {
           mm='0'+mm
-      } 
+      }
 
       return today = mm+'/'+dd+'/'+yyyy;
 	})
@@ -133,6 +133,7 @@ angular.module('myApp.services', [])
       }
     };
 	})
+
 	.factory('formsService', function($http){
 		return {
 			get 	 : function(tplUrl) {

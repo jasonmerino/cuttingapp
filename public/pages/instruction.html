@@ -6,6 +6,26 @@
 </div>
 <div id="print">
 	<div class="row">
+		<div class="col-xs-12">
+			<table class="table module block">
+				<thead class="table-head">
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="cust in customer">
+						<td>{{ cust.first_name }}</td>
+						<td>{{ cust.last_name }}</td>
+						<td>{{ cust.email }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<section>
 				<h4>Details</h4>
@@ -29,11 +49,6 @@
 						<td></td>
 						<td>Order Created</td>
 						<td>{{ created }}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>Customer</td>
-						<td>{{ name }}</td>
 					</tr>
 					<tr>
 						<td></td>

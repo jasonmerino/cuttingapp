@@ -7,6 +7,7 @@ angular.module('myApp.controllers')
   .controller('instructionCtrl', function($scope, $http, $stateParams, $templateCache, $compile, $modal, customersService, instructionsService){
     $scope.instructions;
     $scope.instruction_id = $stateParams.inst_id;
+    $scope.customer = [];
 
     instructionsService.get($stateParams.inst_id)
       .success(function(data){
@@ -23,17 +24,11 @@ angular.module('myApp.controllers')
 
         $scope.products = data.products;
 
-        customersService.get()
+        customersService.get(data.customer_id)
           .success(function(data){
-            $scope.customers = data;
-
-              if($scope.customers.length != 0) {
-                for(var i=0; i<data.length; i++) {
-                  if($scope.customers[i]._id = $scope.cust_id) {
-                    $scope.name = $scope.customers[i].first_name + ' ' + $scope.customers[i].last_name;
-                  }    
-                }
-              }
+            $scope.customer[0] = data;
+            console.log($scope.customer);
+            console.log(data);
           });
       });
  

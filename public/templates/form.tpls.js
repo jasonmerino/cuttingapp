@@ -64,6 +64,39 @@ angular.module("myApp.templates", []).
   }])
 
   .run(['$templateCache', function($templateCache) {
+    $templateCache.put("thickness-number-boneless",
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].number\" ng-options=\"a for a in [1,2,3,4,5,6,7,8,9,10]\">" +
+          "<option value=\"\">--Number--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].thickness\" ng-options=\"a for a in [.25, .5, .75, 1, 1.25, 1.5, 1.75, 2]\">" +
+          "<option value=\"\">--Thickness--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<label class=\"checkbox-inline\"><input type=\"checkbox\" ng-model=\"formValues.values[form.model].boneless\" ng-true-value=\"Yes\" ng-false-value=\"No\">Boneless</label>" +
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
+    $templateCache.put("pork-steaks",
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].number\" ng-options=\"a for a in [1,2,3,4,5,6,7,8,9,10]\">" +
+          "<option value=\"\">--Number--</option>" +
+        "</select>" +
+      "</div>" +
+      "<div class=\"col-md-4\">" +
+        "<select class=\"form-control\" ng-model=\"formValues.values[form.model].thickness\" ng-options=\"a for a in [.25, .5, .75, 1, 1.25, 1.5, 1.75, 2]\">" +
+          "<option value=\"\">--Thickness--</option>" +
+        "</select>" +
+      "</div>"
+      );
+  }])
+
+  .run(['$templateCache', function($templateCache) {
     $templateCache.put("checkbox-custom",
       "<div class=\"col-md-12\">" +
         "<label for=\"{{ id }}\" ng-init=\"id = $id\" class=\"checkbox-inline\" ng-repeat=\"value in form.values\">" +

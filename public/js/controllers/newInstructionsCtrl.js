@@ -141,7 +141,7 @@ angular.module('myApp.controllers')
       } else {
         var total;
         $scope.formValues.minPrice > $scope.formValues.pricePerPound * $scope.formValues.weight || $scope.formValues.weight == undefined ? total = $scope.formValues.minPrice : total = $scope.formValues.pricePerPound * $scope.formValues.weight;
-        $scope.formValues.totalCost = total;
+        $scope.formValues.totalCost = total + $scope.formValues.fees*1;
         return total;
       }
     };

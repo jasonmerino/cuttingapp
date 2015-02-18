@@ -1,5 +1,9 @@
 {
   "products": [{
+    "name"    : "Smoked Meat Weight",
+    "category": "Weight",
+    "price"   : 0.89
+    },{
     "name"    : "Regular",
     "category": "Salami",
     "price"   : 4.29
@@ -45,7 +49,7 @@
     "price"   : 4.99
   },
   {
-    "name"    : "Venison &amp; Swiss",
+    "name"    : "Venison & Swiss",
     "category": "Sausage",
     "price"   : 4.99
   },
@@ -77,6 +81,25 @@
     "name"    : "Apple",
     "category": "Breakfast Links",
     "price"   : 6.99
-  }
-  ]
+  },{
+    "name"    : "Country",
+    "category": "Bulk",
+    "price"   : 0
+  },{
+    "name"    : "Hot Italian",
+    "category": "Bulk",
+    "price"   : 0
+  },{
+    "name"    : "Mild Italian",
+    "category": "Bulk",
+    "price"   : 0
+  },{
+    "name"    : "Chorizo",
+    "category": "Bulk",
+    "price"   : 0
+  },{
+    "name"    : "Cajuon Country",
+    "category": "Bulk",
+    "price"   : 0
+  }]
 }

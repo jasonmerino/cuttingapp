@@ -6,7 +6,7 @@ var logger        = require('morgan');
 var cookieParser  = require('cookie-parser');
 var bodyParser    = require('body-parser');
 var mongoose      = require('mongoose');
-var passport      = require('passport')
+var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var database      = require('./config/database');
 var routes        = require('./app/routes');
@@ -39,7 +39,7 @@ passport.deserializeUser(function(user, done) {
 
 // Define a middleware function to be used for every secured routes
 var auth = function(req, res, next){
-  if (!req.isAuthenticated()) 
+  if (!req.isAuthenticated())
     res.send(401);
   else
     next();

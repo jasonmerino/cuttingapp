@@ -3,17 +3,18 @@
   "main": "camelCaseToHuman.js",
   "author": "John Dennis Pedrie",
   "dependencies": {
-    "angular": "~1.0.6"
+    "angular": "~1"
   },
   "homepage": "https://github.com/jdpedrie/angularjs-camelCase-to-human-filter",
-  "_release": "e9f53f6596",
+  "version": "0.2.1",
+  "_release": "0.2.1",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "e9f53f6596a0fb2300053fc405271af4d0d6a47d"
+    "type": "version",
+    "tag": "0.2.1",
+    "commit": "20311cf9d8107bd1a16579d702e95c4cf3493aac"
   },
   "_source": "git://github.com/jdpedrie/angularjs-camelCase-to-human-filter.git",
-  "_target": "*",
+  "_target": "~0.2.1",
   "_originalSource": "angularjs-camelCase-human",
   "_direct": true
 }
